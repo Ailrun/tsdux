@@ -10,6 +10,6 @@ read -p "Ready to publish tsdux@$version. [Enter] to continue"
 cd dist/
 npm publish
 cd ../
-read -p "Ready to push $branch to upstream. [Enter] to continue"
-git push upstream $branch
-git push upstream --tags
+read -p "Ready to push to upstream. [Enter] to continue"
+git push Ailrun master
+git push Ailrun --tags
