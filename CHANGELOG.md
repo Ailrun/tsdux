@@ -6,4 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- `action` function
+- `payload` function
+- `union` function
+- `reducer` function
+- `subreducer` function
+
+### Miscellaneous
+- Documentations for functions
+
 [Unreleased]: https://github.com/Ailrun/tsdux

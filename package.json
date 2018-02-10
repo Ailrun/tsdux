@@ -26,5 +26,14 @@
   "bugs": {
     "url": "https://github.com/Ailrun/tsdux/issues"
   },
-  "homepage": "https://github.com/Ailrun/tsdux#readme"
+  "homepage": "https://github.com/Ailrun/tsdux#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
+  },
+  "dependencies": {
+    "redux": "^3.7.2"
+  }
 }

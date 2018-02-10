@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./.out",
+    "sourceMap": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5"
+  }
+}
