@@ -4,8 +4,23 @@
   "description": "Type-safe Redux utilities for TypeScript",
   "private": true,
   "scripts": {
+    "pack": "npm-run-all clean-dist make-dist build copy-package",
+    "build": "npm-run-all -p build-cjs build-es5 build-es2015",
+    "clean-dist": "rimraf ./dist",
+    "make-dist": "mkdir ./dist",
+    "build-cjs": "npm-run-all compile-cjs",
+    "build-es5": "npm-run-all compile-es5",
+    "build-es2015": "npm-run-all compile-es2015",
+    "compile-cjs": "tsc --project ./tsconfig.cjs.json",
+    "compile-es5": "tsc --project ./tsconfig.es5.json",
+    "compile-es2015": "tsc --project ./tsconfig.es2015.json",
+    "copy-package": "node ./scripts/copy-package.js",
     "lint": "tslint --project .",
-    "test": "node ./scripts/test.js"
+    "test": "node ./scripts/test.js",
+    "version": "npm-run-all --silent update-changelog stage-changelog",
+    "update-changelog": "node ./scripts/add-changelog-version.js",
+    "stage-changelog": "git add CHANGELOG.md",
+    "prepublish": "npm run pack"
   },
   "repository": {
     "type": "git",
