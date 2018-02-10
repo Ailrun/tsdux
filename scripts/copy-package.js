@@ -1,4 +1,6 @@
 const fs = require('fs');
+const path = require('path');
+
 const config = Object.assign(
   {},
   JSON.parse(fs.readFileSync('./package.json')),
@@ -18,5 +20,11 @@ for (const key in config) {
 }
 
 fs.writeFileSync('./dist/package.json', JSON.stringify(config, undefined, 2) + "\n");
-fs.copyFileSync('./README.md', './dist/README.md');
-fs.copyFileSync('./CHANGELOG.md', './dist/CHANGELOG.md');
+
+function copyFileToDist(file) {
+  fs.copyFileSync(file, path.join('./dist', file));
+}
+
+copyFileToDist('./README.md');
+copyFileToDist('./CHANGELOG.md');
+copyFileToDist('./LICENSE');
