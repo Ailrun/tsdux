@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.1] - 2018-02-10
+
 ### Miscellaneous
 - Add [LICENSE](https://github.com/Ailrun/tsdux/blob/master/LICENSE) file.
 - Fix publish script
@@ -23,4 +25,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add documentations for functions.
 
 [Unreleased]: https://github.com/Ailrun/tsdux
+[1.0.1]: https://github.com/Ailrun/tsdux/tree/v1.0.1
 [1.0.0]: https://github.com/Ailrun/tsdux/tree/v1.0.0
