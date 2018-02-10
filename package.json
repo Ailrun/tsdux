@@ -19,8 +19,7 @@
     "test": "node ./scripts/test.js",
     "version": "npm-run-all --silent update-changelog stage-changelog",
     "update-changelog": "node ./scripts/add-changelog-version.js",
-    "stage-changelog": "git add CHANGELOG.md",
-    "prepublish": "npm run pack"
+    "stage-changelog": "git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
