@@ -1,0 +1,30 @@
+{
+  "name": "tsdux",
+  "version": "0.0.0",
+  "description": "Type-safe Redux utilities for TypeScript",
+  "private": true,
+  "scripts": {
+    "lint": "tslint --project .",
+    "test": "node ./scripts/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Ailrun/tsdux.git"
+  },
+  "keywords": [
+    "redux",
+    "typescript",
+    "type-safe",
+    "state"
+  ],
+  "author": {
+    "name": "Junyoung Clare Jang",
+    "email": "jjc9310@gmail.com",
+    "url": "https://ailrun.github.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ailrun/tsdux/issues"
+  },
+  "homepage": "https://github.com/Ailrun/tsdux#readme"
+}

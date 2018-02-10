@@ -1,0 +1,22 @@
+# Installed libs
+node_modules/
+
+# Generated
+dist/
+coverage/
+spec-js/
+.nyc_output/
+.out/
+
+# Misc
+npm-debug.log
+.DS_STORE
+
+# Editor-specific
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+.settings
+.vscode
+
