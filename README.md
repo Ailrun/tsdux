@@ -8,15 +8,18 @@
 
 Type-safe Redux Utils for TypeScript!
 
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 ## Table of Contents ##
 
-- [tsdux](#tsdux)
-    - [Prior Arts](#prior-arts)
-    - [API](#api)
-    - [Author](#author)
+- [How To Install](#how-to-install)
+- [Prior Arts](#prior-arts)
+- [API](#api)
+- [Author](#author)
 
-<!-- markdown-toc end -->
+## How To Install ##
+
+```
+npm install --save tsdux
+```
 
 ## Prior Arts ##
 
