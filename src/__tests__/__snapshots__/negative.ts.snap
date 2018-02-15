@@ -51,14 +51,35 @@ Array [
 
 exports[`actiontype 1`] = `
 Array [
-  "fail-tests/actiontype.ts/12,22 : Expected 1 arguments, but got 0.",
-  "fail-tests/actiontype.ts/15,3 : Argument of type 'ActionCreatorWithoutPayload<\\"app/tests/ADD_TEST\\">' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
-  Property 'length' is missing in type 'ActionCreatorWithoutPayload<\\"app/tests/ADD_TEST\\">'.",
-  "fail-tests/actiontype.ts/18,28 : Argument of type '(ActionCreatorWithoutPayload<\\"app/tests/ADD_TEST\\"> | ActionCreatorWithoutPayload<\\"app/tests/UPDAT...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
-  Type 'ActionCreatorWithoutPayload<\\"app/tests/ADD_TEST\\"> | ActionCreatorWithoutPayload<\\"app/tests/UPDATE...' is not assignable to type 'ActionCreator<any, any>'.
+  "fail-tests/actiontype.ts/47,22 : Expected 1 arguments, but got 0.",
+  "fail-tests/actiontype.ts/50,28 : Argument of type '12' is not assignable to parameter of type 'ActionCreator<any, any>[]'.",
+  "fail-tests/actiontype.ts/51,28 : Argument of type '\\"fweweglu\\"' is not assignable to parameter of type 'ActionCreator<any, any>[]'.",
+  "fail-tests/actiontype.ts/52,28 : Argument of type '{}' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  Property 'length' is missing in type '{}'.",
+  "fail-tests/actiontype.ts/53,28 : Argument of type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test>' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  Property 'length' is missing in type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test>'.",
+  "fail-tests/actiontype.ts/56,22 : Expected 1 arguments, but got 2.",
+  "fail-tests/actiontype.ts/57,22 : Expected 1 arguments, but got 2.",
+  "fail-tests/actiontype.ts/58,22 : Expected 1 arguments, but got 2.",
+  "fail-tests/actiontype.ts/61,28 : Argument of type '(ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDAT...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  Type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDATE...' is not assignable to type 'ActionCreator<any, any>'.
     Type 'undefined[]' is not assignable to type 'ActionCreator<any, any>'.
       Type 'undefined[]' is not assignable to type 'ActionCreatorWithPayload<any, any>'.
         Property 'type' is missing in type 'undefined[]'.",
+  "fail-tests/actiontype.ts/62,28 : Argument of type '(string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/te...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  Type 'string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tes...' is not assignable to type 'ActionCreator<any, any>'.
+    Type 'string' is not assignable to type 'ActionCreator<any, any>'.",
+  "fail-tests/actiontype.ts/65,7 : Type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionWithPayload<\\"app/tests/REMOVE_TEST\\", number>' is not assignable to type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test>'.
+  Type 'ActionWithPayload<\\"app/tests/REMOVE_TEST\\", number>' is not assignable to type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test>'.
+    Type '\\"app/tests/REMOVE_TEST\\"' is not assignable to type '\\"app/tests/ADD_TEST\\"'.",
+  "fail-tests/actiontype.ts/66,7 : Type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionWithPayload<\\"app/tests/REMOVE_TEST\\", number>' is not assignable to type 'ActionWithPayload<\\"app/tests/REMOVE_TEST\\", number>'.
+  Type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test>' is not assignable to type 'ActionWithPayload<\\"app/tests/REMOVE_TEST\\", number>'.
+    Type '\\"app/tests/ADD_TEST\\"' is not assignable to type '\\"app/tests/REMOVE_TEST\\"'.",
+  "fail-tests/actiontype.ts/75,27 : Property 'toFixed' does not exist on type 'Test'.",
+  "fail-tests/actiontype.ts/81,27 : Property 'expected' does not exist on type 'number'.",
+  "fail-tests/actiontype.ts/88,19 : Property 'payload' does not exist on type 'ActionWithoutPayload<\\"app/tests/CHECK_TEST\\">'.",
+  "fail-tests/actiontype.ts/93,17 : Property 'payload' does not exist on type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionWithPayload<\\"app/tests/UPDATE_TEST\\", { id: ...'.
+  Property 'payload' does not exist on type 'ActionWithoutPayload<\\"app/tests/CHECK_TEST\\">'.",
 ]
 `;
 
