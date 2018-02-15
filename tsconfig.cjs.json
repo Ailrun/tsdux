@@ -9,6 +9,7 @@
   },
   "exclude": [
     "node_modules",
+    "ts-tests",
     "**/__tests__/**",
     "test-utilities.ts"
   ]

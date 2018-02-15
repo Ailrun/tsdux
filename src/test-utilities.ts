@@ -1,5 +1,5 @@
 import * as ts from 'typescript';
-import * as setting from '../fail-tests/tsconfig.json';
+import * as setting from '../ts-tests/tsconfig.json';
 
 const compileTs = (...fileNames: Array<string>): Array<string> => {
   const options = ts.convertCompilerOptionsFromJson(setting.compilerOptions, '.').options;
