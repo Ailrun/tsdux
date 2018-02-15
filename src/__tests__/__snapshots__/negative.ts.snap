@@ -1,7 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`action 1`] = `Array []`;
+exports[`action 1`] = `
+Array [
+  "fail-tests/action.ts/41,39 : Argument of type '5' is not assignable to parameter of type 'string'.",
+  "fail-tests/action.ts/42,39 : Argument of type 'true' is not assignable to parameter of type 'string'.",
+  "fail-tests/action.ts/43,39 : Argument of type 'undefined[]' is not assignable to parameter of type 'string'.",
+  "fail-tests/action.ts/44,39 : Argument of type '{}' is not assignable to parameter of type 'string'.",
+  "fail-tests/action.ts/47,7 : Type 'ActionCreatorWithoutPayload<\\"action/FAILED\\">' is not assignable to type 'ActionCreatorWithPayload<\\"action/FAILED\\", {}>'.
+  Types of property 'action' are incompatible.
+    Type 'ActionWithoutPayload<\\"action/FAILED\\">' is not assignable to type 'ActionWithPayload<\\"action/FAILED\\", {}>'.
+      Property 'payload' is missing in type 'ActionWithoutPayload<\\"action/FAILED\\">'.",
+  "fail-tests/action.ts/48,7 : Type 'ActionCreatorWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionCreatorWithPayload<\\"action/W/O/PL1\\", {}>'.
+  Types of property 'action' are incompatible.
+    Type 'ActionWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionWithPayload<\\"action/W/O/PL1\\", {}>'.
+      Property 'payload' is missing in type 'ActionWithoutPayload<\\"action/W/O/PL1\\">'.",
+  "fail-tests/action.ts/51,36 : Argument of type '5' is not assignable to parameter of type 'string'.",
+  "fail-tests/action.ts/52,36 : Argument of type 'RegExp' is not assignable to parameter of type 'string'.",
+  "fail-tests/action.ts/53,36 : Argument of type 'undefined[]' is not assignable to parameter of type 'string'.",
+  "fail-tests/action.ts/56,7 : Type 'ActionCreatorWithPayload<\\"action/FAILED\\", number>' is not assignable to type 'ActionCreatorWithoutPayload<\\"action/FAILED\\">'.
+  Types of property 'create' are incompatible.
+    Type '(payload: number) => ActionWithPayload<\\"action/FAILED\\", number>' is not assignable to type '() => ActionWithoutPayload<\\"action/FAILED\\">'.",
+  "fail-tests/action.ts/57,7 : Type 'ActionCreatorWithPayload<\\"action/WITH_PL2\\", string>' is not assignable to type 'ActionCreatorWithoutPayload<\\"action/WITH_PL2\\">'.
+  Types of property 'create' are incompatible.
+    Type '(payload: string) => ActionWithPayload<\\"action/WITH_PL2\\", string>' is not assignable to type '() => ActionWithoutPayload<\\"action/WITH_PL2\\">'.",
+  "fail-tests/action.ts/60,32 : Expected 0 arguments, but got 1.",
+  "fail-tests/action.ts/61,32 : Expected 0 arguments, but got 2.",
+  "fail-tests/action.ts/64,7 : Type 'ActionWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionWithoutPayload<\\"IDK\\">'.
+  Type '\\"action/W/O/PL1\\"' is not assignable to type '\\"IDK\\"'.",
+  "fail-tests/action.ts/65,7 : Type 'ActionWithoutPayload<\\"action/W/O/PL0\\">' is not assignable to type 'ActionWithoutPayload<\\"GEWFEWK\\">'.
+  Type '\\"action/W/O/PL0\\"' is not assignable to type '\\"GEWFEWK\\"'.",
+  "fail-tests/action.ts/68,7 : Type 'ActionWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionWithPayload<\\"action/W/O/PL2\\", {}>'.
+  Property 'payload' is missing in type 'ActionWithoutPayload<\\"action/W/O/PL1\\">'.",
+  "fail-tests/action.ts/69,7 : Type 'ActionWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionWithPayload<\\"action/W/O/PL1\\", {}>'.",
+  "fail-tests/action.ts/72,29 : Expected 1 arguments, but got 0.",
+  "fail-tests/action.ts/73,29 : Expected 1 arguments, but got 2.",
+  "fail-tests/action.ts/74,29 : Expected 1 arguments, but got 3.",
+  "fail-tests/action.ts/80,7 : Type 'ActionWithPayload<\\"action/WITH_PL0\\", {}>' is not assignable to type 'ActionWithPayload<\\"gwer\\", {}>'.
+  Type '\\"action/WITH_PL0\\"' is not assignable to type '\\"gwer\\"'.",
+  "fail-tests/action.ts/81,7 : Type 'ActionWithPayload<\\"action/WITH_PL3\\", string[]>' is not assignable to type 'ActionWithPayload<\\"aciton/WITH_PL2\\", string[]>'.
+  Type '\\"action/WITH_PL3\\"' is not assignable to type '\\"aciton/WITH_PL2\\"'.",
+  "fail-tests/action.ts/84,7 : Type 'ActionWithPayload<\\"action/WITH_PL1\\", number>' is not assignable to type 'ActionWithPayload<\\"action/WITH_PL1\\", string>'.
+  Type 'number' is not assignable to type 'string'.",
+  "fail-tests/action.ts/85,7 : Type 'ActionWithPayload<\\"action/WITH_PL0\\", {}>' is not assignable to type 'ActionWithPayload<\\"action/WITH_PL0\\", { value: number; }>'.
+  Type '{}' is not assignable to type '{ value: number; }'.
+    Property 'value' is missing in type '{}'.",
+  "fail-tests/action.ts/93,20 : Cannot assign to 'payload' because it is a constant or a read-only property.",
+  "fail-tests/action.ts/94,20 : Cannot assign to 'payload' because it is a constant or a read-only property.",
+]
+`;
 
-exports[`actiontype 1`] = `Array []`;
+exports[`actiontype 1`] = `
+Array [
+  "fail-tests/actiontype.ts/12,22 : Expected 1 arguments, but got 0.",
+  "fail-tests/actiontype.ts/15,3 : Argument of type 'ActionCreatorWithoutPayload<\\"app/tests/ADD_TEST\\">' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  Property 'length' is missing in type 'ActionCreatorWithoutPayload<\\"app/tests/ADD_TEST\\">'.",
+  "fail-tests/actiontype.ts/18,28 : Argument of type '(ActionCreatorWithoutPayload<\\"app/tests/ADD_TEST\\"> | ActionCreatorWithoutPayload<\\"app/tests/UPDAT...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  Type 'ActionCreatorWithoutPayload<\\"app/tests/ADD_TEST\\"> | ActionCreatorWithoutPayload<\\"app/tests/UPDATE...' is not assignable to type 'ActionCreator<any, any>'.
+    Type 'undefined[]' is not assignable to type 'ActionCreator<any, any>'.
+      Type 'undefined[]' is not assignable to type 'ActionCreatorWithPayload<any, any>'.
+        Property 'type' is missing in type 'undefined[]'.",
+]
+`;
 
 exports[`reducer 1`] = `Array []`;
