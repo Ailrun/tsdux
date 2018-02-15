@@ -4,5 +4,9 @@
     "module": "es2015",
     "outDir": "./dist/es2015",
     "target": "es2015"
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/__tests__/**",
+  ]
 }

@@ -16,7 +16,7 @@
     "compile-es2015": "tsc --project ./tsconfig.es2015.json",
     "copy-package": "node ./scripts/copy-package.js",
     "lint": "tslint --project .",
-    "test": "node ./scripts/test.js",
+    "test": "jest",
     "version": "npm-run-all --silent update-changelog stage-changelog",
     "update-changelog": "node ./scripts/add-changelog-version.js",
     "stage-changelog": "git add CHANGELOG.md"
@@ -42,8 +42,11 @@
   },
   "homepage": "https://github.com/Ailrun/tsdux#readme",
   "devDependencies": {
+    "@types/jest": "^22.1.2",
+    "jest": "^22.3.0",
     "npm-run-all": "^4.1.2",
     "rimraf": "^2.6.2",
+    "ts-jest": "^22.0.4",
     "tslint": "^5.9.1",
     "typescript": "^2.7.1"
   },
