@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`action 1`] = `Array []`;
+
+exports[`actiontype 1`] = `Array []`;
+
+exports[`reducer 1`] = `Array []`;
