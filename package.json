@@ -15,7 +15,7 @@
     "compile-es5": "tsc --project ./tsconfig.es5.json",
     "compile-es2015": "tsc --project ./tsconfig.es2015.json",
     "copy-package": "node ./scripts/copy-package.js",
-    "lint": "tslint --project .",
+    "lint": "tslint --format codeFrame --project .",
     "test": "jest",
     "version": "npm-run-all --silent update-changelog stage-changelog",
     "update-changelog": "node ./scripts/add-changelog-version.js",

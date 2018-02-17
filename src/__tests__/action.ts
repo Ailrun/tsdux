@@ -27,6 +27,7 @@ test('`action` function should return an `ActionCreator` without `action`. It is
 test('`create` of `ActionCreator` should be method and return an redux action', () => {
   const SomeAction = action('some/ACTION');
 
+  //tslint:disable-next-line: no-unbound-method
   expect(SomeAction.create).toBeInstanceOf(Function);
   expect(SomeAction.create()).toEqual({
     type: 'some/ACTION',

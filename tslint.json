@@ -1,4 +1,10 @@
 {
+  "linterOptions":  {
+    "exclude": [
+      "ts-tests/**/*",
+      "**/test-utilities.ts"
+    ]
+  },
   "rules": {
     "adjacent-overload-signatures": true,
     "no-import-side-effect": true,
