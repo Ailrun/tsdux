@@ -11,6 +11,6 @@
     "node_modules",
     "ts-tests",
     "**/__tests__/**",
-    "test-utilities.ts"
+    "**/test-utilities.ts"
   ]
 }
