@@ -52,23 +52,23 @@ Array [
 exports[`actiontype 1`] = `
 Array [
   "ts-tests/actiontype.ts/47,1 : Expected 1 arguments, but got 0.",
-  "ts-tests/actiontype.ts/50,7 : Argument of type '12' is not assignable to parameter of type 'ActionCreator<any, any>[]'.",
-  "ts-tests/actiontype.ts/51,7 : Argument of type '\\"fweweglu\\"' is not assignable to parameter of type 'ActionCreator<any, any>[]'.",
-  "ts-tests/actiontype.ts/52,7 : Argument of type '{}' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  "ts-tests/actiontype.ts/50,7 : Argument of type '12' is not assignable to parameter of type 'ActionCreator<string, any>[]'.",
+  "ts-tests/actiontype.ts/51,7 : Argument of type '\\"fweweglu\\"' is not assignable to parameter of type 'ActionCreator<string, any>[]'.",
+  "ts-tests/actiontype.ts/52,7 : Argument of type '{}' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
   Property 'length' is missing in type '{}'.",
-  "ts-tests/actiontype.ts/53,7 : Argument of type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test>' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  "ts-tests/actiontype.ts/53,7 : Argument of type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test>' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
   Property 'length' is missing in type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test>'.",
   "ts-tests/actiontype.ts/56,1 : Expected 1 arguments, but got 2.",
   "ts-tests/actiontype.ts/57,1 : Expected 1 arguments, but got 2.",
   "ts-tests/actiontype.ts/58,1 : Expected 1 arguments, but got 2.",
-  "ts-tests/actiontype.ts/61,7 : Argument of type '(ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDAT...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
-  Type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDATE...' is not assignable to type 'ActionCreator<any, any>'.
-    Type 'undefined[]' is not assignable to type 'ActionCreator<any, any>'.
-      Type 'undefined[]' is not assignable to type 'ActionCreatorWithPayload<any, any>'.
+  "ts-tests/actiontype.ts/61,7 : Argument of type '(ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDAT...' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
+  Type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDATE...' is not assignable to type 'ActionCreator<string, any>'.
+    Type 'undefined[]' is not assignable to type 'ActionCreator<string, any>'.
+      Type 'undefined[]' is not assignable to type 'ActionCreatorWithPayload<string, any>'.
         Property 'type' is missing in type 'undefined[]'.",
-  "ts-tests/actiontype.ts/62,7 : Argument of type '(string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/te...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
-  Type 'string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tes...' is not assignable to type 'ActionCreator<any, any>'.
-    Type 'string' is not assignable to type 'ActionCreator<any, any>'.",
+  "ts-tests/actiontype.ts/62,7 : Argument of type '(string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/te...' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
+  Type 'string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tes...' is not assignable to type 'ActionCreator<string, any>'.
+    Type 'string' is not assignable to type 'ActionCreator<string, any>'.",
   "ts-tests/actiontype.ts/65,7 : Type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionWithPayload<\\"app/tests/REMOVE_TEST\\", number>' is not assignable to type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test>'.
   Type 'ActionWithPayload<\\"app/tests/REMOVE_TEST\\", number>' is not assignable to type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test>'.
     Type '\\"app/tests/REMOVE_TEST\\"' is not assignable to type '\\"app/tests/ADD_TEST\\"'.",

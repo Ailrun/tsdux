@@ -88,7 +88,7 @@ Functions to define union type (or to do other type-related things).
 #### union ####
 
 ``` typescript
-function union<AC extends ActionCreator<any, any>>(arg: Array<AC>): AC['action'];
+function union<AC extends ActionCreator<string, any>>(arg: Array<AC>): AC['action'];
 ```
 
 To define a type for all actions, you need to use this function. This *union type* is useful when you define a reducer without [`subreducer`](#subreducer) and [`reducer`](#reducer) functions.
