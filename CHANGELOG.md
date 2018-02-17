@@ -12,18 +12,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.0.2] - 2018-02-17
 
 ### Fixed
-- Now library uses function types instead of interface type
+- Now library uses function types instead of interface type.
 
 ### Miscellaneous
 - Add tests
-    - positive/negative tests for action
-    - positive/negative tests for action type
+    - positive/negative tests for action.
+    - positive/negative tests for action type.
 
 ## [1.0.1] - 2018-02-10
 
 ### Miscellaneous
 - Add [LICENSE](https://github.com/Ailrun/tsdux/blob/master/LICENSE) file.
-- Fix publish script
+- Fix publish script.
 
 ## [1.0.0] - 2018-02-10
 
