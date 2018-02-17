@@ -4,7 +4,7 @@
   "description": "Type-safe Redux utilities for TypeScript",
   "private": true,
   "scripts": {
-    "pack": "npm-run-all clean-dist make-dist build copy-package",
+    "packaging": "npm-run-all clean-dist make-dist build copy-package",
     "build": "npm-run-all -p build-cjs build-es5 build-es2015",
     "clean-dist": "rimraf ./dist",
     "make-dist": "mkdir ./dist",
