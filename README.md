@@ -34,6 +34,7 @@ This library is intended to be more fast, and be more lighter (therefore, have l
     - [payload](#payload)
 - [Action type util functions](#action-type-util-functions)
     - [union](#union)
+    - [isType](#istype)
 - [Reducer util functions](#reducer-util-functions)
     - [subreducer](#subreducer)
     - [reducer](#reducer)
@@ -103,6 +104,26 @@ function reducer(state: State = { notes: [] }, action: NoteActions) {
   case AddNote.type:
     // ...
   }
+}
+```
+
+#### isType ####
+
+``` typescript
+function isType<AC extends ActionCreator<string, any>>(
+  action: Action<string, any>, actionCreators: AC | Array<AC>,
+): action is AC['action']
+```
+
+To check an action is specific type or not, you can use this function.
+
+``` typescript
+function reducer(state: State = { notes: [] }, action: NoteActions) {
+  if (isType(action, FixNote)) {
+    // ...
+  } eles if (isType(action, AddNote)) {
+    // ...
+  } // ...
 }
 ```
 

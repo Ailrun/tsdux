@@ -3,6 +3,7 @@ import {
   action, payload,
 } from './action';
 import {
+  isType,
   union,
 } from './actiontype';
 import {
@@ -14,6 +15,7 @@ export {
   ActionCreator,
   SingleActionReducer,
   action,
+  isType,
   payload,
   reducer,
   subreducer,

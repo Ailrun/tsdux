@@ -3,7 +3,7 @@ import {
   action,
   payload,
 } from '../src/action';
-import { union } from '../src/actiontype';
+import { isType, union } from '../src/actiontype';
 
 //START: Constants for tests
 interface Test {
@@ -43,6 +43,60 @@ const action4: ActionType = CheckTest.create();
 //END: Constants for tests
 
 //START: Tests
+//FAIL: The number of arguments is not 2
+isType(action0);
+isType(action1, RemoveTest, 1);
+isType(action1, RemoveTest, AddTest);
+
+//FAIL: First argument is not an action
+isType(5, AddTest);
+isType([], AddTest);
+isType({ test: '1' }, AddTest);
+
+//FAIL: Second argument is not an ActionCreator nor an Array of ActionCreator
+isType(action1, 5);
+isType(action2, true);
+isType(action0, {});
+isType(action2, action2);
+isType(action2, [5]);
+isType(action2, [action1]);
+isType(action2, [[AddTest]]);
+
+//FAIL: Use wrong ActionCreators
+(a: ActionType): void => {
+  // Should use RemoveTest
+  if (isType(a, AddTest)) {
+    console.log(a.payload + 2);
+  }
+};
+(a: ActionType): void => {
+  // Should use AddTest/RemoveTest/UpdateTest
+  if (isType(a, CheckTest)) {
+    console.log(a.payload);
+  }
+};
+(a: ActionType): void => {
+  // Should use AddTest/RemoveTest/UpdateTest
+  if (isType(a, [CheckTest])) {
+    console.log(a.payload);
+  }
+};
+
+//FAIL: Array second argument only guarantees that
+// first argument is a type of union of actions correspond with each ActionCreator
+(a: ActionType): void => {
+  // Should use RemoveTest only
+  if (isType(a, [AddTest, RemoveTest])) {
+    console.log(a.payload + 3);
+  }
+};
+(a: ActionType): void => {
+  // Should not use CheckTest
+  if (isType(a, [AddTest, CheckTest])) {
+    console.log(a.payload);
+  }
+};
+
 //FAIL: There are no arguments
 union();
 

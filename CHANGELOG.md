@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Add `isType` function.
+
 ### Fixed
 - **BREAKING** Fix top-type (most general type) of generic parameter `T` of `union`.
     - It is originally `any`, but since `T` should be a subtype of `string`,  
