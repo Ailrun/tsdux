@@ -11,6 +11,7 @@ Type-safe Redux Utils for TypeScript!
 ## Table of Contents ##
 
 - [How To Install](#how-to-install)
+- [How To Use](#how-to-use)
 - [Prior Arts](#prior-arts)
 - [API](#api)
 - [Author](#author)
@@ -19,6 +20,51 @@ Type-safe Redux Utils for TypeScript!
 
 ```
 npm install --save tsdux
+```
+
+## How To Use ##
+
+``` typescript
+// mysection.ts
+import { action, payload, union } from 'tsdux';
+
+interface MySectionState {
+  log: string;
+  id: number;
+}
+
+// Make action creators
+export const MyAction = action('myapp/mysection/MY_ACTION', payload<string>());
+export const YourAction = action('myapp/mysection/YOUR_ACTION', payload<{ id: number }>());
+
+const ActionType = union([MyAction, YourAction]);
+type ActionType = typeof ActionType;
+
+export default function reducer(state: MySectionState, action: ActionType): MySectionState {
+  switch(action.type) {
+  case MyAction.type:
+    return {
+      ...state,
+      log: action.payload,
+    };
+  case YourAction.type:
+    return {
+      ...state,
+      id: action.payload.id,
+    };
+  default:
+    return state;
+  }
+}
+```
+
+``` typescript
+// At other part that uses redux
+import { MyAction, YourAction } from './mysection';
+import { store } from './store';
+
+store.dispatch(MyAction.create('abcd'));
+store.dispatch(YourAction.create({ id: 5 }));
 ```
 
 ## Prior Arts ##
