@@ -38,51 +38,51 @@ const actionWithPayload4 = ActionWithPayload4.create({ name: 'Ailrun', age: 9000
 
 //START: Tests
 //FAIL: First argument has wrong type. It should be a string
-const _ActionWithoutPayload0 = action(5);
-const _ActionWithoutPayload1 = action(true);
-const _ActionWithoutPayload2 = action([]);
-const _ActionWithoutPayload3 = action({});
+action(5);
+action(true);
+action([]);
+action({});
 
 //FAIL: Assign ActionCreatorWithoutPayload to ActionCreatorWithPayload
-const _ActionWithoutPayload4: ActionCreatorWithPayload<'action/FAILED'> = action('action/FAILED');
-const _ActionWithoutPayload5: ActionCreatorWithPayload<'action/W/O/PL1'> = ActionWithoutPayload1;
+const _ActionWithoutPayload0: ActionCreatorWithPayload<'action/FAILED'> = action('action/FAILED');
+const _ActionWithoutPayload1: ActionCreatorWithPayload<'action/W/O/PL1'> = ActionWithoutPayload1;
 
 //FAIL: First argument has wrong type. It should be a string
-const _ActionWithPayload0 = action(5, payload());
-const _ActionWithPayload1 = action(/RegExp/, payload<string>());
-const _ActionWithPayload2 = action([], payload<number>());
+action(5, payload());
+action(/RegExp/, payload<string>());
+action([], payload<number>());
 
 //FAIL: Assign ActionCreatorWithPayload to ActionCreatorWithoutPayload
-const _ActionWithPayload3: ActionCreatorWithoutPayload<'action/FAILED'> = action('action/FAILED', payload<number>());
-const _ActionWithPayload4: ActionCreatorWithoutPayload<'action/WITH_PL2'> = ActionWithPayload2;
+const _ActionWithPayload0: ActionCreatorWithoutPayload<'action/FAILED'> = action('action/FAILED', payload<number>());
+const _ActionWithPayload1: ActionCreatorWithoutPayload<'action/WITH_PL2'> = ActionWithPayload2;
 
 //FAIL: ActionCreatorWithoutPayload.create does not accept any arguments
-const _actionWithoutPayload0 = ActionWithoutPayload0.create(5);
-const _actionWithoutPayload1 = ActionWithoutPayload0.create('adsf', []);
+ActionWithoutPayload0.create(5);
+ActionWithoutPayload0.create('adsf', []);
 
 //FAIL: Assign ActionWithoutPayload to ActionWithoutPayload with some other type
-const _actionWithoutPayload2: ActionWithoutPayload<'IDK'> = ActionWithoutPayload1.create();
-const _actionWithoutPayload3: ActionWithoutPayload<'GEWFEWK'> = ActionWithoutPayload0.create();
+const _actionWithoutPayload0: ActionWithoutPayload<'IDK'> = ActionWithoutPayload1.create();
+const _actionWithoutPayload1: ActionWithoutPayload<'GEWFEWK'> = ActionWithoutPayload0.create();
 
 //FAIL: Assign ActionWithoutPayload to ActionWithPayload
-const _actionWithoutPayload4: ActionWithPayload<'action/W/O/PL2'> = ActionWithoutPayload2.create();
-const _actionWithoutPayload5: ActionWithPayload<'action/W/O/PL1'> = ActionWithoutPayload1.create();
+const _actionWithoutPayload2: ActionWithPayload<'action/W/O/PL2'> = ActionWithoutPayload2.create();
+const _actionWithoutPayload3: ActionWithPayload<'action/W/O/PL1'> = ActionWithoutPayload1.create();
 
 //FAIL: ActionCreatorWithPayload.create accept exactly one argument
-const _actionWithPayload0 = ActionWithPayload0.create();
-const _actionWithPayload1 = ActionWithPayload0.create({}, 2);
-const _actionWithPayload2 = ActionWithPayload0.create({}, 2, 4);
+ActionWithPayload0.create();
+ActionWithPayload0.create({}, 2);
+ActionWithPayload0.create({}, 2, 4);
 
 //INFO: Assign ActionWithPayload to ActionWithoutPayload has no problems
 const __actionWithoutPayload0: ActionWithoutPayload<'action/WITH_PL0'> = ActionWithPayload0.create({});
 
 //FAIL: Assign ActionWithPayload to ActionWithPayload with some other type
-const _actionWithPayload3: ActionWithPayload<'gwer', {}> = ActionWithPayload0.create({});
-const _actionWithPayload4: ActionWithPayload<'aciton/WITH_PL2', Array<string>> = ActionWithPayload3.create(['afwd']);
+const _actionWithPayload0: ActionWithPayload<'gwer', {}> = ActionWithPayload0.create({});
+const _actionWithPayload1: ActionWithPayload<'aciton/WITH_PL2', Array<string>> = ActionWithPayload3.create(['afwd']);
 
 //FAIL: Assign ActionWithPayload to ActionWithPayload with some other payload
-const _actionWithPayload5: ActionWithPayload<'action/WITH_PL1', string> = ActionWithPayload1.create(320);
-const _actionWithPayload6: ActionWithPayload<'action/WITH_PL0', { value: number }> = ActionWithPayload0.create({});
+const _actionWithPayload2: ActionWithPayload<'action/WITH_PL1', string> = ActionWithPayload1.create(320);
+const _actionWithPayload3: ActionWithPayload<'action/WITH_PL0', { value: number }> = ActionWithPayload0.create({});
 
 //INFO: Assign ActionWithPayload to ActionWithPayload with payload of supertype of original payload makes no errors.
 const __actionWithPayload0: ActionWithPayload<'action/WITH_PL7', {}> = ActionWithPayload7.create({

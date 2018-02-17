@@ -23,43 +23,43 @@ const ActionType = union([
   CheckTest,
 ]);
 type ActionType = typeof ActionType;
-const Action0: ActionType = AddTest.create({
+const action0: ActionType = AddTest.create({
   value: '123',
   expected: '333',
 });
-const Action1: ActionType = RemoveTest.create(5);
-const Action2: ActionType = UpdateTest.create({
+const action1: ActionType = RemoveTest.create(5);
+const action2: ActionType = UpdateTest.create({
   id: 23,
   test: {
     value: 'abce',
     expected: '!!!@#',
   },
 });
-const Action3: ActionType = AddTest.create({
+const action3: ActionType = AddTest.create({
   value: 'gwe123gf',
   expected: 'fwe1111111',
 });
-const Action4: ActionType = CheckTest.create();
+const action4: ActionType = CheckTest.create();
 //END: Constants for tests
 
 //START: Tests
 //FAIL: There are no arguments
-const _ActionType0 = union();
+union();
 
 //FAIL: First argument is not an array
-const _ActionType1 = union(12);
-const _ActionType2 = union('fweweglu');
-const _ActionType3 = union({});
-const _ActionType4 = union(AddTest);
+union(12);
+union('fweweglu');
+union({});
+union(AddTest);
 
 //FAIL: There are more than one arguments
-const _ActionType5 = union([], 5);
-const _ActionType6 = union([], {});
-const _ActionType7 = union([], AddTest);
+union([], 5);
+union([], {});
+union([], AddTest);
 
 //FAIL: More than one slots of the first argument are not a ActionCreator
-const _ActionType8 = union([AddTest, UpdateTest, []]);
-const _ActionType9 = union(['', AddTest, RemoveTest]);
+union([AddTest, UpdateTest, []]);
+union(['', AddTest, RemoveTest]);
 
 //FAIL: Assign union of actions to specific action
 const _AddTest: ActionWithPayload<'app/tests/ADD_TEST', Test> = union([AddTest, RemoveTest]);
@@ -69,26 +69,26 @@ const _RemoveTest: ActionWithPayload<'app/tests/REMOVE_TEST', number> = union([A
 const __Action: ActionType = CheckTest.create();
 
 //FAIL: Use wrong action types
-const _useAction0: (a: ActionType) => void = (a) => {
+(a: ActionType): void => {
   // Should use `'app/tests/REMOVE_TEST'`
   if (a.type === 'app/tests/ADD_TEST') {
     console.log(a.payload.toFixed(4));
   }
 };
-const _useAction1: (a: ActionType) => void = (a) => {
+(a: ActionType): void => {
   // Should use `AddTest.type`
   if (a.type === RemoveTest.type) {
     console.log(a.payload.expected);
   }
 };
-const _useAction2: (a: ActionType) => void = (a) => {
+(a: ActionType): void => {
   // Should use a type of ActionWithPayload
   switch (a.type) {
   case CheckTest.type:
     console.log(a.payload);
   }
 };
-const _useAction3: (a: ActionType) => void = (a) => {
+(a: ActionType): void => {
   // Should discriminate whether `a` is ActionWithPayload or not
   console.log(a.payload);
 };

@@ -2,10 +2,10 @@
 
 exports[`action 1`] = `
 Array [
-  "ts-tests/action.ts/41,39 : Argument of type '5' is not assignable to parameter of type 'string'.",
-  "ts-tests/action.ts/42,39 : Argument of type 'true' is not assignable to parameter of type 'string'.",
-  "ts-tests/action.ts/43,39 : Argument of type 'undefined[]' is not assignable to parameter of type 'string'.",
-  "ts-tests/action.ts/44,39 : Argument of type '{}' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/41,8 : Argument of type '5' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/42,8 : Argument of type 'true' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/43,8 : Argument of type 'undefined[]' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/44,8 : Argument of type '{}' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/47,7 : Type 'ActionCreatorWithoutPayload<\\"action/FAILED\\">' is not assignable to type 'ActionCreatorWithPayload<\\"action/FAILED\\", {}>'.
   Types of property 'action' are incompatible.
     Type 'ActionWithoutPayload<\\"action/FAILED\\">' is not assignable to type 'ActionWithPayload<\\"action/FAILED\\", {}>'.
@@ -14,17 +14,17 @@ Array [
   Types of property 'action' are incompatible.
     Type 'ActionWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionWithPayload<\\"action/W/O/PL1\\", {}>'.
       Property 'payload' is missing in type 'ActionWithoutPayload<\\"action/W/O/PL1\\">'.",
-  "ts-tests/action.ts/51,36 : Argument of type '5' is not assignable to parameter of type 'string'.",
-  "ts-tests/action.ts/52,36 : Argument of type 'RegExp' is not assignable to parameter of type 'string'.",
-  "ts-tests/action.ts/53,36 : Argument of type 'undefined[]' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/51,8 : Argument of type '5' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/52,8 : Argument of type 'RegExp' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/53,8 : Argument of type 'undefined[]' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/56,7 : Type 'ActionCreatorWithPayload<\\"action/FAILED\\", number>' is not assignable to type 'ActionCreatorWithoutPayload<\\"action/FAILED\\">'.
   Types of property 'create' are incompatible.
     Type '(payload: number) => ActionWithPayload<\\"action/FAILED\\", number>' is not assignable to type '() => ActionWithoutPayload<\\"action/FAILED\\">'.",
   "ts-tests/action.ts/57,7 : Type 'ActionCreatorWithPayload<\\"action/WITH_PL2\\", string>' is not assignable to type 'ActionCreatorWithoutPayload<\\"action/WITH_PL2\\">'.
   Types of property 'create' are incompatible.
     Type '(payload: string) => ActionWithPayload<\\"action/WITH_PL2\\", string>' is not assignable to type '() => ActionWithoutPayload<\\"action/WITH_PL2\\">'.",
-  "ts-tests/action.ts/60,32 : Expected 0 arguments, but got 1.",
-  "ts-tests/action.ts/61,32 : Expected 0 arguments, but got 2.",
+  "ts-tests/action.ts/60,1 : Expected 0 arguments, but got 1.",
+  "ts-tests/action.ts/61,1 : Expected 0 arguments, but got 2.",
   "ts-tests/action.ts/64,7 : Type 'ActionWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionWithoutPayload<\\"IDK\\">'.
   Type '\\"action/W/O/PL1\\"' is not assignable to type '\\"IDK\\"'.",
   "ts-tests/action.ts/65,7 : Type 'ActionWithoutPayload<\\"action/W/O/PL0\\">' is not assignable to type 'ActionWithoutPayload<\\"GEWFEWK\\">'.
@@ -32,9 +32,9 @@ Array [
   "ts-tests/action.ts/68,7 : Type 'ActionWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionWithPayload<\\"action/W/O/PL2\\", {}>'.
   Property 'payload' is missing in type 'ActionWithoutPayload<\\"action/W/O/PL1\\">'.",
   "ts-tests/action.ts/69,7 : Type 'ActionWithoutPayload<\\"action/W/O/PL1\\">' is not assignable to type 'ActionWithPayload<\\"action/W/O/PL1\\", {}>'.",
-  "ts-tests/action.ts/72,29 : Expected 1 arguments, but got 0.",
-  "ts-tests/action.ts/73,29 : Expected 1 arguments, but got 2.",
-  "ts-tests/action.ts/74,29 : Expected 1 arguments, but got 3.",
+  "ts-tests/action.ts/72,1 : Expected 1 arguments, but got 0.",
+  "ts-tests/action.ts/73,1 : Expected 1 arguments, but got 2.",
+  "ts-tests/action.ts/74,1 : Expected 1 arguments, but got 3.",
   "ts-tests/action.ts/80,7 : Type 'ActionWithPayload<\\"action/WITH_PL0\\", {}>' is not assignable to type 'ActionWithPayload<\\"gwer\\", {}>'.
   Type '\\"action/WITH_PL0\\"' is not assignable to type '\\"gwer\\"'.",
   "ts-tests/action.ts/81,7 : Type 'ActionWithPayload<\\"action/WITH_PL3\\", string[]>' is not assignable to type 'ActionWithPayload<\\"aciton/WITH_PL2\\", string[]>'.
@@ -51,22 +51,22 @@ Array [
 
 exports[`actiontype 1`] = `
 Array [
-  "ts-tests/actiontype.ts/47,22 : Expected 1 arguments, but got 0.",
-  "ts-tests/actiontype.ts/50,28 : Argument of type '12' is not assignable to parameter of type 'ActionCreator<any, any>[]'.",
-  "ts-tests/actiontype.ts/51,28 : Argument of type '\\"fweweglu\\"' is not assignable to parameter of type 'ActionCreator<any, any>[]'.",
-  "ts-tests/actiontype.ts/52,28 : Argument of type '{}' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  "ts-tests/actiontype.ts/47,1 : Expected 1 arguments, but got 0.",
+  "ts-tests/actiontype.ts/50,7 : Argument of type '12' is not assignable to parameter of type 'ActionCreator<any, any>[]'.",
+  "ts-tests/actiontype.ts/51,7 : Argument of type '\\"fweweglu\\"' is not assignable to parameter of type 'ActionCreator<any, any>[]'.",
+  "ts-tests/actiontype.ts/52,7 : Argument of type '{}' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
   Property 'length' is missing in type '{}'.",
-  "ts-tests/actiontype.ts/53,28 : Argument of type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test>' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  "ts-tests/actiontype.ts/53,7 : Argument of type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test>' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
   Property 'length' is missing in type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test>'.",
-  "ts-tests/actiontype.ts/56,22 : Expected 1 arguments, but got 2.",
-  "ts-tests/actiontype.ts/57,22 : Expected 1 arguments, but got 2.",
-  "ts-tests/actiontype.ts/58,22 : Expected 1 arguments, but got 2.",
-  "ts-tests/actiontype.ts/61,28 : Argument of type '(ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDAT...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  "ts-tests/actiontype.ts/56,1 : Expected 1 arguments, but got 2.",
+  "ts-tests/actiontype.ts/57,1 : Expected 1 arguments, but got 2.",
+  "ts-tests/actiontype.ts/58,1 : Expected 1 arguments, but got 2.",
+  "ts-tests/actiontype.ts/61,7 : Argument of type '(ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDAT...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
   Type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDATE...' is not assignable to type 'ActionCreator<any, any>'.
     Type 'undefined[]' is not assignable to type 'ActionCreator<any, any>'.
       Type 'undefined[]' is not assignable to type 'ActionCreatorWithPayload<any, any>'.
         Property 'type' is missing in type 'undefined[]'.",
-  "ts-tests/actiontype.ts/62,28 : Argument of type '(string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/te...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
+  "ts-tests/actiontype.ts/62,7 : Argument of type '(string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/te...' is not assignable to parameter of type 'ActionCreator<any, any>[]'.
   Type 'string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tes...' is not assignable to type 'ActionCreator<any, any>'.
     Type 'string' is not assignable to type 'ActionCreator<any, any>'.",
   "ts-tests/actiontype.ts/65,7 : Type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionWithPayload<\\"app/tests/REMOVE_TEST\\", number>' is not assignable to type 'ActionWithPayload<\\"app/tests/ADD_TEST\\", Test>'.
