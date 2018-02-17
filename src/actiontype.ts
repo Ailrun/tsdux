@@ -1,9 +1,9 @@
 import {
-  ActionCreator
+  ActionCreator,
 } from './action';
 
-export const union = <AC extends ActionCreator<any, any>>(
+export function union<AC extends ActionCreator<any, any>>(
   _arg: Array<AC>,
-): AC['action'] => {
+): AC['action'] {
   return undefined as any;
 }

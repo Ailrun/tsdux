@@ -45,11 +45,8 @@ Functions for defining an action (or rather an action creator). Defined action c
 #### action ####
 
 ``` typescript
-interface ActionBuilder {
-  <T extends string>(type: T): ActionCreator<T, undefined>;
-  <T extends string, P>(type: T, payload: Payload<P>): ActionCreator<T, P>;
-};
-const action: ActionBuilder;
+function action<T extends string>(type: T): ActionCreatorWithoutPayload<T>
+function action<T extends string, P>(type: T, p: Payload<P>): ActionCreatorWithPayload<T, P>
 ```
 `action` is for creating an `ActionCreator`. `ActionCreator` is object used for this library. You can create action by using `actionCreator.create` method.
 
@@ -73,7 +70,7 @@ However, if you cannot define payload, this action is useless. You can define it
 #### payload ####
 
 ``` typescript
-const payload: <P>(): Payload<P>;
+function payload<P>(): Payload<P>
 ```
 
 `payload` is for creating a `payload` argument of [`action`](#action) function.
@@ -91,7 +88,7 @@ Functions to define union type (or to do other type-related things).
 #### union ####
 
 ``` typescript
-const union: <AC extends ActionCreator<any, any>>(_arg: AC[]) => AC["action"];
+function union<AC extends ActionCreator<any, any>>(arg: Array<AC>): AC['action'];
 ```
 
 To define a type for all actions, you need to use this function. This *union type* is useful when you define a reducer without [`subreducer`](#subreducer) and [`reducer`](#reducer) functions.
@@ -116,11 +113,12 @@ Functions for define redux reducer.
 #### subreducer ####
 
 ``` typescript
-interface SubreducerBuilder {
-    <S, T extends string>(action: ActionCreatorWithoutPayload<T>, handler: SingleActionReducerWithoutPayload<S, T>['handler']): SingleActionReducerWithoutPayload<S, T>;
-    <S, T extends string, P>(action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, P>['handler']): SingleActionReducerWithPayload<S, T, P>;
-}
-const subreducer: SubReducerBuilder;
+function subreducer<S, T extends string>(
+  action: ActionCreatorWithoutPayload<T>, handler: SingleActionReducerWithoutPayload<S, T>['handler'],
+): SingleActionReducerWithoutPayload<S, T>
+function subreducer<S, T extends string, P>(
+  action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, P>['handler'],
+): SingleActionReducerWithPayload<S, T, P>
 ```
 
 Function to define a reducer for specific action.
@@ -145,7 +143,10 @@ This subreducer (or `SingleActionReducer`) can be merged using [`reducer`](#redu
 #### reducer ####
 
 ``` typescript
-const reducer: <S, T extends string, P, SR extends SingleActionReducer<S, T, P>>(initialState: S, subreducers: SR[]) => Reducer<S>;
+function reducer<S, T extends string, P, SR extends SingleActionReducer<S, T, P>>(
+  initialState: S,
+  subreducers: Array<SR>,
+): Reducer<S>
 ```
 
 Function to define a reducer by merging `SingleActionReducer` cases.

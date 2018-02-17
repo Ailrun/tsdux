@@ -17,25 +17,23 @@ export type SingleActionReducer<S, T extends string, P = {}> =
   | SingleActionReducerWithPayload<S, T, P>
   ;
 
-export interface SubreducerBuilder {
-  <S, T extends string>(
-    action: ActionCreatorWithoutPayload<T>, handler: SingleActionReducerWithoutPayload<S, T>['handler'],
-  ): SingleActionReducerWithoutPayload<S, T>;
-  <S, T extends string, P>(
-    action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, P>['handler'],
-  ): SingleActionReducerWithPayload<S, T, P>;
+export function subreducer<S, T extends string>(
+  action: ActionCreatorWithoutPayload<T>, handler: SingleActionReducerWithoutPayload<S, T>['handler'],
+): SingleActionReducerWithoutPayload<S, T>;
+export function subreducer<S, T extends string, P>(
+  action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, P>['handler'],
+): SingleActionReducerWithPayload<S, T, P>;
+export function subreducer<T extends string, P>(action: ActionCreator<T, P>, handler: any) {
+  return {
+    type: action.type,
+    handler,
+  };
 }
-export const subreducer: SubreducerBuilder = <T extends string, P>(
-  action: ActionCreator<T, P>, handler: any,
-) => ({
-  type: action.type,
-  handler,
-});
 
-export const reducer = <S, T extends string, P, SR extends SingleActionReducer<S, T, P>>(
+export function reducer<S, T extends string, P, SR extends SingleActionReducer<S, T, P>>(
   initialState: S,
   subreducers: Array<SR>,
-): Reducer<S> => {
+): Reducer<S> {
   const reducerMap = subreducers.reduce((map, sr) => {
     return {
       ...map,
@@ -65,4 +63,4 @@ export const reducer = <S, T extends string, P, SR extends SingleActionReducer<S
       return (handler as handlerWithPayload)(state, action.payload);
     }
   };
-};
+}

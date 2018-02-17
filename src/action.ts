@@ -29,15 +29,9 @@ export type ActionCreator<T extends string, P = {}> =
 export interface Payload<P = {}> {
 }
 
-export interface ActionBuilder {
-  <T extends string>(
-    type: T,
-  ): ActionCreatorWithoutPayload<T>;
-  <T extends string, P>(
-    type: T, p: Payload<P>,
-  ): ActionCreatorWithPayload<T, P>;
-}
-export const action: ActionBuilder = <T extends string, P>(type: T, pType?: Payload<P>) => {
+export function action<T extends string>(type: T): ActionCreatorWithoutPayload<T>;
+export function action<T extends string, P>(type: T, p: Payload<P>): ActionCreatorWithPayload<T, P>;
+export function action<T extends string, P>(type: T, pType?: Payload<P>): ActionCreator<T, P> {
   if (pType) {
     return {
       type,
@@ -56,4 +50,6 @@ export const action: ActionBuilder = <T extends string, P>(type: T, pType?: Payl
   }
 }
 
-export const payload = <P>(): Payload<P> => ({});
+export function payload<P>(): Payload<P> {
+  return {};
+}

@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+- Now library uses function types instead of interface type
+
 ### Miscellaneous
 - Add tests
     - positive/negative tests for action
