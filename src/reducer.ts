@@ -30,7 +30,7 @@ export function subreducer<T extends string, P>(action: ActionCreator<T, P>, han
   };
 }
 
-export function reducer<S, T extends string, P, SR extends SingleActionReducer<S, T, P>>(
+export function reducer<S, T extends string, SR extends SingleActionReducer<S, T, any>>(
   initialState: S,
   subreducers: Array<SR>,
 ): Reducer<S> {

@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
         // Type before fixed: SingleActionReducer<any, 'a', any>
         // Type after fixed: SingleActionReducer<any, 'a', number>
         ```
+- **BREAKING** Fix unnecessary type parameter of `reducer` function.  
+  Now it accepts only 3 type parameters.
 
 ### Miscellaneous
 - Add tests

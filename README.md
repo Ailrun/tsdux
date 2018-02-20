@@ -211,7 +211,7 @@ This subreducer (or `SingleActionReducer`) can be merged using [`reducer`](#redu
 #### reducer ####
 
 ``` typescript
-function reducer<S, T extends string, P, SR extends SingleActionReducer<S, T, P>>(
+function reducer<S, T extends string, SR extends SingleActionReducer<S, T, any>>(
   initialState: S,
   subreducers: Array<SR>,
 ): Reducer<S>
