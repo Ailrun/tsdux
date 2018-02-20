@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
         // Type after fixed: SingleActionReducer<any, 'a', number>
         ```
 
+### Miscellaneous
+- Add tests
+    - positive/negative tests for reducer functions.
+
 ## [1.1.0] - 2018-02-17
 
 ### Added

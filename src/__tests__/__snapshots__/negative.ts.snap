@@ -119,4 +119,96 @@ Array [
 ]
 `;
 
-exports[`reducer 1`] = `Array []`;
+exports[`reducer 1`] = `
+Array [
+  "ts-tests/reducer.ts/78,31 : Property 'id' does not exist on type '{}'.",
+  "ts-tests/reducer.ts/83,18 : Property 'id' does not exist on type '{}'.",
+  "ts-tests/reducer.ts/84,23 : Property 'updated' does not exist on type '{}'.",
+  "ts-tests/reducer.ts/100,46 : Argument of type '(SingleActionReducerWithPayload<{ histories: { id: number; history: {}; }[]; }, \\"app/history/ADD_...' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.
+  Type 'SingleActionReducerWithPayload<{ histories: { id: number; history: {}; }[]; }, \\"app/history/ADD_H...' is not assignable to type 'SingleActionReducer<State, string, {}>'.
+    Type 'SingleActionReducerWithPayload<{ histories: { id: number; history: {}; }[]; }, \\"app/history/ADD_H...' is not assignable to type 'SingleActionReducer<State, string, {}>'.
+      Type 'SingleActionReducerWithPayload<{ histories: { id: number; history: {}; }[]; }, \\"app/history/ADD_H...' is not assignable to type 'SingleActionReducerWithPayload<State, string, {}>'.
+        Type '{ histories: { id: number; history: {}; }[]; }' is not assignable to type 'State'.
+          Types of property 'histories' are incompatible.
+            Type '{ id: number; history: {}; }[]' is not assignable to type '{ id: number; history: History; }[]'.
+              Type '{ id: number; history: {}; }' is not assignable to type '{ id: number; history: History; }'.
+                Types of property 'history' are incompatible.
+                  Type '{}' is not assignable to type 'History'.
+                    Property 'content' is missing in type '{}'.",
+  "ts-tests/reducer.ts/110,1 : Expected 2 arguments, but got 0.",
+  "ts-tests/reducer.ts/111,1 : Expected 2 arguments, but got 1.",
+  "ts-tests/reducer.ts/112,1 : Expected 2 arguments, but got 3.",
+  "ts-tests/reducer.ts/115,12 : Argument of type '5' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.",
+  "ts-tests/reducer.ts/116,12 : Argument of type '{}' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
+  Property 'type' is missing in type '{}'.",
+  "ts-tests/reducer.ts/117,12 : Argument of type 'undefined[]' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
+  Property 'type' is missing in type 'undefined[]'.",
+  "ts-tests/reducer.ts/118,12 : Argument of type 'ActionWithPayload<\\"app/history/ADD_HISTORY\\", History>' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
+  Property 'action' is missing in type 'ActionWithPayload<\\"app/history/ADD_HISTORY\\", History>'.",
+  "ts-tests/reducer.ts/119,12 : Argument of type 'ActionWithPayload<\\"app/history/ADD_HISTORY\\", History>[]' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
+  Property 'type' is missing in type 'ActionWithPayload<\\"app/history/ADD_HISTORY\\", History>[]'.",
+  "ts-tests/reducer.ts/122,27 : Argument of type '5' is not assignable to parameter of type '(state: {}, payload: {}) => {}'.",
+  "ts-tests/reducer.ts/123,27 : Argument of type 'undefined[]' is not assignable to parameter of type '(state: {}, payload: {}) => {}'.
+  Type 'undefined[]' provides no match for the signature '(state: {}, payload: {}): {}'.",
+  "ts-tests/reducer.ts/124,12 : Argument of type 'ActionCreatorWithoutPayload<\\"app/history/RESET_HISTORY\\">' is not assignable to parameter of type 'ActionCreatorWithPayload<\\"app/history/RESET_HISTORY\\", {}>'.
+  Types of property 'action' are incompatible.
+    Type 'ActionWithoutPayload<\\"app/history/RESET_HISTORY\\">' is not assignable to type 'ActionWithPayload<\\"app/history/RESET_HISTORY\\", {}>'.
+      Property 'payload' is missing in type 'ActionWithoutPayload<\\"app/history/RESET_HISTORY\\">'.",
+  "ts-tests/reducer.ts/125,24 : Argument of type '(s: {}) => void' is not assignable to parameter of type '(state: void, payload: {}) => void'.
+  Types of parameters 's' and 'state' are incompatible.
+    Type 'void' is not assignable to type '{}'.",
+  "ts-tests/reducer.ts/127,24 : Argument of type '(s: State, v: History, x: any) => State' is not assignable to parameter of type '(state: State, payload: History) => State'.",
+  "ts-tests/reducer.ts/130,12 : Argument of type 'ActionCreatorWithPayload<\\"app/history/UPDATE_HISTORY\\", { id: number; updated: History; }>' is not assignable to parameter of type 'ActionCreatorWithPayload<\\"app/history/UPDATE_HISTORY\\", History>'.
+  Type '{ id: number; updated: History; }' is not assignable to type 'History'.
+    Property 'content' is missing in type '{ id: number; updated: History; }'.",
+  "ts-tests/reducer.ts/131,12 : Argument of type 'ActionCreatorWithoutPayload<\\"app/history/RESET_HISTORY\\">' is not assignable to parameter of type 'ActionCreatorWithPayload<\\"app/history/RESET_HISTORY\\", undefined>'.
+  Types of property 'action' are incompatible.
+    Type 'ActionWithoutPayload<\\"app/history/RESET_HISTORY\\">' is not assignable to type 'ActionWithPayload<\\"app/history/RESET_HISTORY\\", undefined>'.
+      Property 'payload' is missing in type 'ActionWithoutPayload<\\"app/history/RESET_HISTORY\\">'.",
+  "ts-tests/reducer.ts/132,12 : Argument of type 'ActionCreatorWithoutPayload<\\"app/history/RESET_HISTORY\\">' is not assignable to parameter of type 'ActionCreatorWithPayload<\\"app/history/RESET_HISTORY\\", number>'.
+  Types of property 'action' are incompatible.
+    Type 'ActionWithoutPayload<\\"app/history/RESET_HISTORY\\">' is not assignable to type 'ActionWithPayload<\\"app/history/RESET_HISTORY\\", number>'.
+      Property 'payload' is missing in type 'ActionWithoutPayload<\\"app/history/RESET_HISTORY\\">'.",
+  "ts-tests/reducer.ts/133,12 : Argument of type 'ActionCreatorWithPayload<\\"app/history/ADD_HISTORY\\", History>' is not assignable to parameter of type 'ActionCreatorWithPayload<\\"app/history/ADD_HISTORY\\", { id: number; }>'.
+  Type 'History' is not assignable to type '{ id: number; }'.
+    Property 'id' is missing in type 'History'.",
+  "ts-tests/reducer.ts/136,12 : Argument of type 'ActionCreatorWithPayload<\\"app/history/UPDATE_HISTORY\\", { id: number; updated: History; }>' is not assignable to parameter of type 'ActionCreatorWithPayload<\\"app/history/UPDATE_HISTORY\\", { id: string; }>'.
+  Type '{ id: number; updated: History; }' is not assignable to type '{ id: string; }'.
+    Types of property 'id' are incompatible.
+      Type 'number' is not assignable to type 'string'.",
+  "ts-tests/reducer.ts/137,12 : Argument of type 'ActionCreatorWithPayload<\\"app/history/UPDATE_HISTORY\\", { id: number; updated: History; }>' is not assignable to parameter of type 'ActionCreatorWithPayload<\\"app/history/UPDATE_HISTORY\\", { id: number; updated: History; world: boo...'.
+  Type '{ id: number; updated: History; }' is not assignable to type '{ id: number; updated: History; world: boolean; }'.
+    Property 'world' is missing in type '{ id: number; updated: History; }'.",
+  "ts-tests/reducer.ts/143,1 : Expected 2 arguments, but got 0.",
+  "ts-tests/reducer.ts/144,1 : Expected 2 arguments, but got 1.",
+  "ts-tests/reducer.ts/145,1 : Expected 2 arguments, but got 3.",
+  "ts-tests/reducer.ts/146,1 : Expected 2 arguments, but got 3.",
+  "ts-tests/reducer.ts/149,23 : Argument of type '5' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.",
+  "ts-tests/reducer.ts/150,23 : Argument of type '{}' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.
+  Property 'length' is missing in type '{}'.",
+  "ts-tests/reducer.ts/151,23 : Argument of type 'true' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.",
+  "ts-tests/reducer.ts/152,23 : Argument of type '\\"asdaw\\"' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.",
+  "ts-tests/reducer.ts/153,23 : Argument of type 'number[]' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.
+  Type 'number' is not assignable to type 'SingleActionReducer<State, string, {}>'.",
+  "ts-tests/reducer.ts/154,23 : Argument of type '{ <S, T extends string>(action: ActionCreatorWithoutPayload<T>, handler: (state: S) => S): Single...' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.
+  Type '{ <S, T extends string>(action: ActionCreatorWithoutPayload<T>, handler: (state: S) => S): Single...' is not assignable to type 'SingleActionReducer<State, string, {}>'.
+    Type '{ <S, T extends string>(action: ActionCreatorWithoutPayload<T>, handler: (state: S) => S): Single...' is not assignable to type 'SingleActionReducerWithPayload<State, string, {}>'.
+      Property 'type' is missing in type '{ <S, T extends string>(action: ActionCreatorWithoutPayload<T>, handler: (state: S) => S): Single...'.",
+  "ts-tests/reducer.ts/155,23 : Argument of type 'ActionCreatorWithPayload<\\"app/history/ADD_HISTORY\\", History>[]' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.
+  Type 'ActionCreatorWithPayload<\\"app/history/ADD_HISTORY\\", History>' is not assignable to type 'SingleActionReducer<State, string, {}>'.
+    Type 'ActionCreatorWithPayload<\\"app/history/ADD_HISTORY\\", History>' is not assignable to type 'SingleActionReducerWithPayload<State, string, {}>'.
+      Property 'handler' is missing in type 'ActionCreatorWithPayload<\\"app/history/ADD_HISTORY\\", History>'.",
+  "ts-tests/reducer.ts/158,23 : Argument of type 'SingleActionReducerWithPayload<{ x: number; y: number; }, \\"app/history/ADD_HISTORY\\", History>[]' is not assignable to parameter of type 'SingleActionReducer<State, string, {}>[]'.
+  Type 'SingleActionReducerWithPayload<{ x: number; y: number; }, \\"app/history/ADD_HISTORY\\", History>' is not assignable to type 'SingleActionReducer<State, string, {}>'.
+    Type 'SingleActionReducerWithPayload<{ x: number; y: number; }, \\"app/history/ADD_HISTORY\\", History>' is not assignable to type 'SingleActionReducerWithPayload<State, string, {}>'.
+      Type '{ x: number; y: number; }' is not assignable to type 'State'.
+        Property 'histories' is missing in type '{ x: number; y: number; }'.",
+  "ts-tests/reducer.ts/159,14 : 'number' only refers to a type, but is being used as a value here.",
+  "ts-tests/reducer.ts/159,25 : 'number' only refers to a type, but is being used as a value here.",
+  "ts-tests/reducer.ts/159,35 : Argument of type 'SingleActionReducerWithPayload<{ histories: { id: number; history: {}; }[]; }, \\"app/history/ADD_H...' is not assignable to parameter of type 'SingleActionReducer<{ x: any; y: any; }, string, {}>[]'.
+  Type 'SingleActionReducerWithPayload<{ histories: { id: number; history: {}; }[]; }, \\"app/history/ADD_H...' is not assignable to type 'SingleActionReducer<{ x: any; y: any; }, string, {}>'.
+    Type 'SingleActionReducerWithPayload<{ histories: { id: number; history: {}; }[]; }, \\"app/history/ADD_H...' is not assignable to type 'SingleActionReducerWithPayload<{ x: any; y: any; }, string, {}>'.
+      Type '{ histories: { id: number; history: {}; }[]; }' is not assignable to type '{ x: any; y: any; }'.
+        Property 'x' is missing in type '{ histories: { id: number; history: {}; }[]; }'.",
+]
+`;
