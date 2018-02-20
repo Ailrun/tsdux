@@ -20,8 +20,8 @@ export type SingleActionReducer<S, T extends string, P = {}> =
 export function subreducer<S, T extends string>(
   action: ActionCreatorWithoutPayload<T>, handler: SingleActionReducerWithoutPayload<S, T>['handler'],
 ): SingleActionReducerWithoutPayload<S, T>;
-export function subreducer<S, T extends string, P>(
-  action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, P>['handler'],
+export function subreducer<S, T extends string, P extends PSup, PSup>(
+  action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, PSup>['handler'],
 ): SingleActionReducerWithPayload<S, T, P>;
 export function subreducer<T extends string, P>(action: ActionCreator<T, P>, handler: any) {
   return {

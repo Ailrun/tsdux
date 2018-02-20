@@ -183,8 +183,8 @@ Functions for define redux reducer.
 function subreducer<S, T extends string>(
   action: ActionCreatorWithoutPayload<T>, handler: SingleActionReducerWithoutPayload<S, T>['handler'],
 ): SingleActionReducerWithoutPayload<S, T>
-function subreducer<S, T extends string, P>(
-  action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, P>['handler'],
+function subreducer<S, T extends string, P extends PSup, PSup>(
+  action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, PSup>['handler'],
 ): SingleActionReducerWithPayload<S, T, P>
 ```
 
