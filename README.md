@@ -6,6 +6,7 @@
 [![github latest tag](https://img.shields.io/github/tag/Ailrun/tsdux.svg)](https://github.com/Ailrun/tsdux/tags)
 [![github commit from latest](https://img.shields.io/github/commits-since/Ailrun/tsdux/latest.svg)](https://github.com/Ailrun/tsdux)
 [![travis status](https://travis-ci.org/Ailrun/tsdux.svg?branch=master)](https://travis-ci.org/Ailrun/tsdux)
+[![codecov coverage](https://img.shields.io/codecov/c/github/ailrun/tsdux.svg)](https://codecov.io/gh/Ailrun/tsdux)
 
 Type-safe Redux Utils for TypeScript!
 

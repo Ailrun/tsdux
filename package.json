@@ -17,6 +17,7 @@
     "copy-package": "node ./scripts/copy-package.js",
     "lint": "tslint --format codeFrame --project .",
     "test": "jest",
+    "test-coverage": "jest --coverage",
     "version": "npm-run-all --silent update-changelog stage-changelog",
     "update-changelog": "node ./scripts/add-changelog-version.js",
     "stage-changelog": "git add CHANGELOG.md"
