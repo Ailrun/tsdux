@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0] - 2018-02-20
+
 ### Fixed
 - **BREAKING** Fix type of `subreducer` to use 4 type parameters.  
   It used originally 3 type parameters.
@@ -66,6 +68,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add documentations for functions.
 
 [Unreleased]: https://github.com/Ailrun/tsdux
+[1.2.0]: https://github.com/Ailrun/tsdux/tree/v1.2.0
 [1.1.0]: https://github.com/Ailrun/tsdux/tree/v1.1.0
 [1.0.2]: https://github.com/Ailrun/tsdux/tree/v1.0.2
 [1.0.1]: https://github.com/Ailrun/tsdux/tree/v1.0.1
