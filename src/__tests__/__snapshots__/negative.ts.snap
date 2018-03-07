@@ -4,7 +4,7 @@ exports[`action 1`] = `
 Array [
   "ts-tests/action.ts/41,8 : Argument of type '5' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/42,8 : Argument of type 'true' is not assignable to parameter of type 'string'.",
-  "ts-tests/action.ts/43,8 : Argument of type 'undefined[]' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/43,8 : Argument of type 'never[]' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/44,8 : Argument of type '{}' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/47,7 : Type 'ActionCreatorWithoutPayload<\\"action/FAILED\\">' is not assignable to type 'ActionCreatorWithPayload<\\"action/FAILED\\", {}>'.
   Types of property 'action' are incompatible.
@@ -16,7 +16,7 @@ Array [
       Property 'payload' is missing in type 'ActionWithoutPayload<\\"action/W/O/PL1\\">'.",
   "ts-tests/action.ts/51,8 : Argument of type '5' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/52,8 : Argument of type 'RegExp' is not assignable to parameter of type 'string'.",
-  "ts-tests/action.ts/53,8 : Argument of type 'undefined[]' is not assignable to parameter of type 'string'.",
+  "ts-tests/action.ts/53,8 : Argument of type 'never[]' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/56,7 : Type 'ActionCreatorWithPayload<\\"action/FAILED\\", number>' is not assignable to type 'ActionCreatorWithoutPayload<\\"action/FAILED\\">'.
   Types of property 'create' are incompatible.
     Type '(payload: number) => ActionWithPayload<\\"action/FAILED\\", number>' is not assignable to type '() => ActionWithoutPayload<\\"action/FAILED\\">'.",
@@ -55,9 +55,9 @@ Array [
   "ts-tests/actiontype.ts/48,1 : Expected 2 arguments, but got 3.",
   "ts-tests/actiontype.ts/49,1 : Expected 2 arguments, but got 3.",
   "ts-tests/actiontype.ts/52,8 : Argument of type '5' is not assignable to parameter of type 'Action<string, any>'.",
-  "ts-tests/actiontype.ts/53,8 : Argument of type 'undefined[]' is not assignable to parameter of type 'Action<string, any>'.
-  Type 'undefined[]' is not assignable to type 'ActionWithPayload<string, any>'.
-    Property 'payload' is missing in type 'undefined[]'.",
+  "ts-tests/actiontype.ts/53,8 : Argument of type 'never[]' is not assignable to parameter of type 'Action<string, any>'.
+  Type 'never[]' is not assignable to type 'ActionWithPayload<string, any>'.
+    Property 'payload' is missing in type 'never[]'.",
   "ts-tests/actiontype.ts/54,10 : Argument of type '{ test: string; }' is not assignable to parameter of type 'Action<string, any>'.
   Object literal may only specify known properties, and 'test' does not exist in type 'Action<string, any>'.",
   "ts-tests/actiontype.ts/57,17 : Argument of type '5' is not assignable to parameter of type 'ActionCreatorWithoutPayload<string> | ActionCreatorWithPayload<string, any> | ActionCreator<strin...'.",
@@ -99,9 +99,9 @@ Array [
   "ts-tests/actiontype.ts/112,1 : Expected 1 arguments, but got 2.",
   "ts-tests/actiontype.ts/115,7 : Argument of type '(ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDAT...' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
   Type 'ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tests/UPDATE...' is not assignable to type 'ActionCreator<string, any>'.
-    Type 'undefined[]' is not assignable to type 'ActionCreator<string, any>'.
-      Type 'undefined[]' is not assignable to type 'ActionCreatorWithPayload<string, any>'.
-        Property 'type' is missing in type 'undefined[]'.",
+    Type 'never[]' is not assignable to type 'ActionCreator<string, any>'.
+      Type 'never[]' is not assignable to type 'ActionCreatorWithPayload<string, any>'.
+        Property 'type' is missing in type 'never[]'.",
   "ts-tests/actiontype.ts/116,7 : Argument of type '(string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/te...' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
   Type 'string | ActionCreatorWithPayload<\\"app/tests/ADD_TEST\\", Test> | ActionCreatorWithPayload<\\"app/tes...' is not assignable to type 'ActionCreator<string, any>'.
     Type 'string' is not assignable to type 'ActionCreator<string, any>'.",
@@ -141,15 +141,15 @@ Array [
   "ts-tests/reducer.ts/115,12 : Argument of type '5' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.",
   "ts-tests/reducer.ts/116,12 : Argument of type '{}' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
   Property 'type' is missing in type '{}'.",
-  "ts-tests/reducer.ts/117,12 : Argument of type 'undefined[]' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
-  Property 'type' is missing in type 'undefined[]'.",
+  "ts-tests/reducer.ts/117,12 : Argument of type 'never[]' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
+  Property 'type' is missing in type 'never[]'.",
   "ts-tests/reducer.ts/118,12 : Argument of type 'ActionWithPayload<\\"app/history/ADD_HISTORY\\", History>' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
   Property 'action' is missing in type 'ActionWithPayload<\\"app/history/ADD_HISTORY\\", History>'.",
   "ts-tests/reducer.ts/119,12 : Argument of type 'ActionWithPayload<\\"app/history/ADD_HISTORY\\", History>[]' is not assignable to parameter of type 'ActionCreatorWithPayload<string, {}>'.
   Property 'type' is missing in type 'ActionWithPayload<\\"app/history/ADD_HISTORY\\", History>[]'.",
   "ts-tests/reducer.ts/122,27 : Argument of type '5' is not assignable to parameter of type '(state: {}, payload: {}) => {}'.",
-  "ts-tests/reducer.ts/123,27 : Argument of type 'undefined[]' is not assignable to parameter of type '(state: {}, payload: {}) => {}'.
-  Type 'undefined[]' provides no match for the signature '(state: {}, payload: {}): {}'.",
+  "ts-tests/reducer.ts/123,27 : Argument of type 'never[]' is not assignable to parameter of type '(state: {}, payload: {}) => {}'.
+  Type 'never[]' provides no match for the signature '(state: {}, payload: {}): {}'.",
   "ts-tests/reducer.ts/124,12 : Argument of type 'ActionCreatorWithoutPayload<\\"app/history/RESET_HISTORY\\">' is not assignable to parameter of type 'ActionCreatorWithPayload<\\"app/history/RESET_HISTORY\\", {}>'.
   Types of property 'action' are incompatible.
     Type 'ActionWithoutPayload<\\"app/history/RESET_HISTORY\\">' is not assignable to type 'ActionWithPayload<\\"app/history/RESET_HISTORY\\", {}>'.
