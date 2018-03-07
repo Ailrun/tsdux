@@ -1,5 +1,5 @@
-import { action, payload } from '../src/action';
-import { reducer, subreducer } from '../src/reducer';
+import { Payload, action, payload, props } from '../src/action';
+import { Subreducer, reducer, subreducer } from '../src/reducer';
 
 //START: Constants for tests
 interface History {
@@ -16,7 +16,7 @@ interface State {
 }
 
 const AddHistory = action('app/history/ADD_HISTORY', payload<History>());
-const UpdateHistory = action('app/history/UPDATE_HISTORY', payload<{id: number, updated: History}>());
+const UpdateHistory = action('app/history/UPDATE_HISTORY', props<{id: number, updated: History}>());
 const RemoveHistory = action('app/history/REMOVE_HISTORY', payload<number>());
 const ResetHistory = action('app/history/RESET_HISTORY');
 
@@ -52,7 +52,7 @@ const initialState: State = {
   }],
 };
 
-const subreducer0 = subreducer(AddHistory, (s: State, history) => {
+const subreducer0 = subreducer(AddHistory, (s: State, { payload: history }) => {
   const newId = s.histories.map(h => h.id)
     .reduce((max, id) => id > max ? id : max, 0) + 1;
 
@@ -66,22 +66,22 @@ const subreducer0 = subreducer(AddHistory, (s: State, history) => {
     ],
   };
 });
-const subreducer1 = subreducer(RemoveHistory, (s: State, removeId) => {
+const subreducer1 = subreducer(RemoveHistory, (s: State, { payload: removeId }) => {
   const newHistories = s.histories.filter(({ id }) => id != removeId);
 
   return {
     histories: newHistories,
   };
 });
-const subreducer2 = subreducer(UpdateHistory, (s: State, update) => {
+const subreducer2 = subreducer(UpdateHistory, (s: State, { id, updated }) => {
   const newHistories = s.histories.map(history => {
-    if (history.id !== update.id) {
+    if (history.id !== id) {
       return history;
     }
 
     return {
-      id: update.id,
-      history: update.updated,
+      id,
+      history: updated,
     };
   });
 
@@ -132,12 +132,17 @@ subreducer(ResetHistory, (s: State, v: undefined) => s);
 subreducer(ResetHistory, (s: State, v: number) => s);
 subreducer(AddHistory, (s: State, v: { id: number }) => s);
 
-//FAIL: Second argument of handler is not a supertype of action payload.
+//FAIL: Second argument of handler is not a supertype of action.
 subreducer(UpdateHistory, (s: State, v: { id: string }) => s);
 subreducer(UpdateHistory, (s: State, v: { id: number, updated: History, world: boolean }) => s);
 
-//INFO: If second argument of handler is a supertype of action payload, it is allowed.
+//INFO: If second argument of handler is a supertype of action, it is allowed.
 subreducer(UpdateHistory, (s: State, v: { id: number }) => s);
+
+//FAIL: Assign Subreducer to Subreducer with different payload
+const _subreducer0: Subreducer<any, 'app/history/UPDATE_HISTORY', { x: number }> = subreducer(UpdateHistory, (s: State, v: { id: number, updated: History }): any => s);
+const _subreducer1: Subreducer<any, 'a', { result: number }> = subreducer(action('a', props<{ result: boolean }>()), (s: {}, { result }): any => s);
+const _subreducer2: Subreducer<any, 'a', Payload<string>> = subreducer(action('a', payload<number>()), (...args: any[]): any => ({}));
 
 //FAIL: The number of arguments is not 2
 reducer();
@@ -145,7 +150,7 @@ reducer(initialState);
 reducer(initialState, [], 5);
 reducer(initialState, [subreducer0], 1);
 
-//FAIL: Second argument is not an array of subreducers (or `SingleActionReducer`s)
+//FAIL: Second argument is not an array of subreducers (or `Subreducer`s)
 reducer(initialState, 5);
 reducer(initialState, {});
 reducer(initialState, true);
