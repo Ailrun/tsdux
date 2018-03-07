@@ -31,23 +31,29 @@ npm install --save tsdux
 import { action, payload, union } from 'tsdux';
 
 interface MySectionState {
-  log: string;
+  log?: string;
   id: number;
 }
 
 // Make action creators
-export const MyAction = action('myapp/mysection/MY_ACTION', payload<string>());
+export const MyAction = action('myapp/mysection/MY_ACTION', props<{ error?: string }>());
 export const YourAction = action('myapp/mysection/YOUR_ACTION', payload<{ id: number }>());
 
-const ActionType = union([MyAction, YourAction]);
-type ActionType = typeof ActionType;
+const Action = union([
+  MyAction,
+  YourAction,
+]);
+type Action = typeof Action;
 
-export default function reducer(state: MySectionState, action: ActionType): MySectionState {
+const initialState: MySectionState = {
+  id: 0,
+};
+export default function reducer(state: MySectionState = initialState, action: ActionType): MySectionState {
   switch(action.type) {
   case MyAction.type:
     return {
       ...state,
-      log: action.payload,
+      log: action.error,
     };
   case YourAction.type:
     return {
@@ -80,6 +86,7 @@ This library is intended to be more fast, and be more lighter (therefore, have l
 - [Action util functions](#action-util-functions)
     - [action](#action)
     - [payload](#payload)
+    - [props](#props)
 - [Action type util functions](#action-type-util-functions)
     - [union](#union)
     - [isType](#istype)
@@ -94,8 +101,9 @@ Functions for defining an action (or rather an action creator). Defined action c
 #### action ####
 
 ``` typescript
-function action<T extends string>(type: T): ActionCreatorWithoutPayload<T>
-function action<T extends string, P>(type: T, p: Payload<P>): ActionCreatorWithPayload<T, P>
+function action<T extends string>(type: T): TypeOnlyActionCreator<T>;
+function action<T extends string, P extends object = {}>(type: T, p: PropsOpt<P>): PropsActionCreator<T, P>;
+function action<T extends string, P = {}>(type: T, p: PayloadOpt<P>): PayloadActionCreator<T, P>;
 ```
 `action` is for creating an `ActionCreator`. `ActionCreator` is object used for this library. You can create action by using `actionCreator.create` method.
 
@@ -119,15 +127,46 @@ However, if you cannot define payload, this action is useless. You can define it
 #### payload ####
 
 ``` typescript
-function payload<P>(): Payload<P>
+function payload<P = {}>(): PayloadOpt<P>
 ```
 
-`payload` is for creating a `payload` argument of [`action`](#action) function.
+`payload` is for creating a `payload` argument (second argument) of [`action`](#action) function.
 
 ``` typescript
 const AddNote = action('AddNote', payload<string>());
 const addNote = AddNote.create('This is a new note');
 console.log(addNote); // { type: 'AddNote', payload: 'This is a new note' }
+```
+
+#### props ####
+
+``` typescript
+function props<P extends object = {}>(): PropsOpt<Omit<P, 'type'>>
+```
+
+`props` is for creating a `props` argument (second argument) of [`action`](#action) function.  
+The difference between `props` and `payload` is that `props` injects additional data to action as property, where `payload` set additional data to `payload` of action. To get more clear understanding, see following example.
+
+``` typescript
+const ActionFromProps = action('Example0', props<{ x: number }>());
+const ActionFromPayload = action('Example1', payload<{ x: number }>());
+
+console.log(ActionFromProps.create({ x: 5 })); // { type: 'Example0', x: 5 }
+console.log(ActionFromPayload.create({ x: 5 })); // { type: 'Example1', payload: { x: 5 } }
+
+const OnlyForPayload = action('Example2', payload<string>());
+// Following codes emit an error.
+const ThisDoesNotWork = action('Example3', props<string>()); // There's no way to inject 'string' into action.
+
+console.log(OnlyForPayload.create('abc')); // { type: 'Example2', payload: 'abc' }
+```
+
+``` typescript
+const AddError = action('AddError', props<{ error?: string }>());
+const addError0 = AddError.create({});
+const addError1 = AddError.create({ error: 'New error' });
+console.log(addError0); // { type: 'AddError' }
+console.log(addError1); // { type: 'AddError', error: 'New error' }
 ```
 
 ### Action type util functions ###
@@ -140,7 +179,7 @@ Functions to define union type (or to do other type-related things).
 function union<AC extends ActionCreator<string, any>>(arg: Array<AC>): AC['action'];
 ```
 
-To define a type for all actions, you need to use this function. This *union type* is useful when you define a reducer without [`subreducer`](#subreducer) and [`reducer`](#reducer) functions.
+To define the type including all actions, you need to use this function. This *union type* is useful when you define a reducer without [`subreducer`](#subreducer) and [`reducer`](#reducer) functions.
 
 ``` typescript
 const NoteActions = union([FixNote, AddNote]);
@@ -159,7 +198,7 @@ function reducer(state: State = { notes: [] }, action: NoteActions) {
 
 ``` typescript
 function isType<AC extends ActionCreator<string, any>>(
-  action: Action<string, any>, actionCreators: AC | Array<AC>,
+  action: AnyAction, actionCreators: AC | Array<AC>,
 ): action is AC['action']
 ```
 
@@ -182,12 +221,9 @@ Functions for define redux reducer.
 #### subreducer ####
 
 ``` typescript
-function subreducer<S, T extends string>(
-  action: ActionCreatorWithoutPayload<T>, handler: SingleActionReducerWithoutPayload<S, T>['handler'],
-): SingleActionReducerWithoutPayload<S, T>
-function subreducer<S, T extends string, P extends PSup, PSup>(
-  action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, PSup>['handler'],
-): SingleActionReducerWithPayload<S, T, P>
+function subreducer<S, T extends string, P extends object>(
+  action: ActionCreator<T, P>, handler: Subreducer<S, T, P>['handler'],
+): Subreducer<S, T, P>
 ```
 
 Function to define a reducer for specific action.
@@ -207,18 +243,17 @@ const addNoteReducer = subreducer(AddNote, function (state, payload) {
 });
 ```
 
-This subreducer (or `SingleActionReducer`) can be merged using [`reducer`](#reducer) function.
+These `Subreducer`s can be merged using [`reducer`](#reducer) function.
 
 #### reducer ####
 
 ``` typescript
-function reducer<S, T extends string, SR extends SingleActionReducer<S, T, any>>(
-  initialState: S,
-  subreducers: Array<SR>,
+function reducer<S, SR extends Subreducer<S, string, any>>(
+  initialState: S, subreducers: Array<SR>,
 ): Reducer<S>
 ```
 
-Function to define a reducer by merging `SingleActionReducer` cases.
+Function to define a reducer by merging `Subreducer` cases.
 
 ``` typescript
 export reducer({ notes: [] }, [fixNoteReducer, addNoteReducer]);
