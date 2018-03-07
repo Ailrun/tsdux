@@ -71,8 +71,8 @@ export default function reducer(state: MySectionState = initialState, action: Ac
 import { MyAction, YourAction } from './mysection';
 import { store } from './store';
 
-store.dispatch(MyAction.create('abcd'));
-store.dispatch(YourAction.create({ id: 5 }));
+store.dispatch(MyAction('abcd'));
+store.dispatch(YourAction({ id: 5 }));
 ```
 
 ## Prior Arts ##
@@ -105,12 +105,14 @@ function action<T extends string>(type: T): TypeOnlyActionCreator<T>;
 function action<T extends string, P extends object = {}>(type: T, p: PropsOpt<P>): PropsActionCreator<T, P>;
 function action<T extends string, P = {}>(type: T, p: PayloadOpt<P>): PayloadActionCreator<T, P>;
 ```
-`action` is for creating an `ActionCreator`. `ActionCreator` is object used for this library. You can create action by using `actionCreator.create` method.
+`action` is for creating an `ActionCreator`. `ActionCreator` is object used for this library. You can create action by calling `ActionCreator` itself or calling `actionCreator.create` method.
 
 ``` typescript
 const FixNote = action('FixNote');
-const fixNote = FixNote.create();
-console.log(fixNote); // { type: 'FixNote' }
+const fixNote0 = FixNote.create();
+const fixNote1 = FixNote();
+console.log(fixNote0); // { type: 'FixNote' }
+console.log(fixNote1); // { type: 'FixNote' }
 ```
 
 ``` typescript
@@ -134,7 +136,7 @@ function payload<P = {}>(): PayloadOpt<P>
 
 ``` typescript
 const AddNote = action('AddNote', payload<string>());
-const addNote = AddNote.create('This is a new note');
+const addNote = AddNote('This is a new note');
 console.log(addNote); // { type: 'AddNote', payload: 'This is a new note' }
 ```
 
@@ -151,20 +153,20 @@ The difference between `props` and `payload` is that `props` injects additional 
 const ActionFromProps = action('Example0', props<{ x: number }>());
 const ActionFromPayload = action('Example1', payload<{ x: number }>());
 
-console.log(ActionFromProps.create({ x: 5 })); // { type: 'Example0', x: 5 }
-console.log(ActionFromPayload.create({ x: 5 })); // { type: 'Example1', payload: { x: 5 } }
+console.log(ActionFromProps({ x: 5 })); // { type: 'Example0', x: 5 }
+console.log(ActionFromPayload({ x: 5 })); // { type: 'Example1', payload: { x: 5 } }
 
 const OnlyForPayload = action('Example2', payload<string>());
 // Following codes emit an error.
 const ThisDoesNotWork = action('Example3', props<string>()); // There's no way to inject 'string' into action.
 
-console.log(OnlyForPayload.create('abc')); // { type: 'Example2', payload: 'abc' }
+console.log(OnlyForPayload('abc')); // { type: 'Example2', payload: 'abc' }
 ```
 
 ``` typescript
 const AddError = action('AddError', props<{ error?: string }>());
-const addError0 = AddError.create({});
-const addError1 = AddError.create({ error: 'New error' });
+const addError0 = AddError({});
+const addError1 = AddError({ error: 'New error' });
 console.log(addError0); // { type: 'AddError' }
 console.log(addError1); // { type: 'AddError', error: 'New error' }
 ```

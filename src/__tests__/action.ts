@@ -46,6 +46,31 @@ test('`action` function should return an `ActionCreator` with undefined `action`
   expect(Bonjour.action).toBeUndefined();
 });
 
+test('`ActionCreator` should be callable and return an redux action', () => {
+  const SomeAction = action('some/ACTION');
+  //tslint:disable-next-line: no-unbound-method
+  expect(SomeAction).toBeInstanceOf(Function);
+  expect(SomeAction()).toEqual({
+    type: 'some/ACTION',
+  });
+
+  const NoAction = action('no/ACTION', props<{ action: boolean }>());
+  //tslint:disable-next-line: no-unbound-method
+  expect(NoAction).toBeInstanceOf(Function);
+  expect(NoAction({ action: true })).toEqual({
+    type: 'no/ACTION',
+    action: true,
+  });
+
+  const MayAction = action('may/ACTION', payload<number>());
+  //tslint:disable-next-line: no-unbound-method
+  expect(MayAction).toBeInstanceOf(Function);
+  expect(MayAction(0)).toEqual({
+    type: 'may/ACTION',
+    payload: 0,
+  });
+});
+
 test('`create` of `ActionCreator` should be method and return an redux action', () => {
   const SomeAction = action('some/ACTION');
   //tslint:disable-next-line: no-unbound-method
