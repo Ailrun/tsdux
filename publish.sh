@@ -1,5 +1,5 @@
 npm run lint || exit 0
-npm run test || exit 0
+npm run test-coverage || exit 0
 
 select version_type in "patch" "minor" "major"; do
     read -p "Creating commit and tag for a $version_type release. Press [Enter].";
