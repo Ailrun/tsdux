@@ -12,6 +12,12 @@ test('`payload` function should return empty object', () => {
   expect(payload<{ x: number }>()).toEqual({ __tsdux_opt__: ActionOptType.PAYLOAD });
 });
 
+test('`action` function should throw error when second argument is not created by `props` or `payload`', () => {
+  expect(() => {
+    action('SomeType', {} as any);
+  }).toThrowError(/tsdux error(.|\n)*{}/);
+});
+
 test('`action` function should return an `ActionCreator` with `type` and `create`', () => {
   const Test = action('TEST');
   expect(Test).toHaveProperty('type');

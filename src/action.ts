@@ -94,7 +94,11 @@ export function action<T extends string, P extends object>(
         action: undefined as any,
       };
     default:
-      throw new Error('tsdux error: use `props` or `payload` function when make an action creator');
+      const x: never = pType;
+      const jsonIndent = 2;
+      const rep = JSON.stringify(x, undefined, jsonIndent);
+
+      throw new Error(`tsdux error: use \`props\` or \`payload\` function when make an action creator\n    ${rep} is not created by \`props\` nor \`payload\``);
     }
   } else {
     return {
