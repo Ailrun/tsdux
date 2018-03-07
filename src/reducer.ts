@@ -22,8 +22,7 @@ export function subreducer<S, T extends string, P extends object>(
 }
 
 export function reducer<S, SR extends Subreducer<S, string, any>>(
-  initialState: S,
-  subreducers: Array<SR>,
+  initialState: S, subreducers: Array<SR>,
 ): Reducer<S> {
   const reducerMap = subreducers.reduce((map, { type, handler }) => {
     return {
