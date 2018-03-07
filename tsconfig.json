@@ -10,6 +10,7 @@
     "outDir": "./.out",
     "sourceMap": true,
     "strictFunctionTypes": true,
+    "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5"
