@@ -6,6 +6,9 @@ cache:
   directories:
     - ~/.npm
 node_js: "lts/*"
+branches:
+  only:
+    - master
 install: npm install
 script:
   - npm run lint
