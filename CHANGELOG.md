@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   It used originally 3 type parameters.
     - Following type is fixed.
         ```typescript
-        subreducer(action('a', payload<number>()), (...args: any): any => ({}));
+        subreducer(action('a', payload<number>()), (...args: any[]): any => ({}));
         // Type before fixed: SingleActionReducer<any, 'a', any>
         // Type after fixed: SingleActionReducer<any, 'a', number>
         ```
