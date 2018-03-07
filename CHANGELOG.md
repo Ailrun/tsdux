@@ -6,6 +6,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Add `props` function.
+- Add `PropsOpt` type.
+- Add `Payload` type.
+
+### Changed
+- **LOGIC BREAKING CHANGE** Now second argument of handler of `subreducer` accepts  
+  `state` and `action`. Originally it accepted `state` and `payload`.
+- **TYPE BREAKING CHANGE** Almost all types related with `Action` is changed.  
+  Namely,
+    - `Action` type is changed.
+    - `ActionCreator` type is no longer exported from `index.ts`.
+    - `ActionWithoutPayload` type is renamed to `TypeOnlyAction`.
+    - `ActionWithPayload` type is renamed to `PayloadAction`.
+    - `TypeOnlyAction` and `PayloadAction` are now exported.
+    - `ActionCreatorWithoutPayload` type is renamed to `TypeOnlyActionCreator`.
+    - `ActionCreatorWithPayload` type is renamed to `PayloadActionCreator`.
+    - `TypeOnlyActionCreator` and `PayloadActionCreator` are not exported.
+    - `SingleActionReducer` type is renamed to `Subreducer`.
+    - `Payload` type is renamed to `PayloadOpt`, and new `Payload` type is added.
+- **TYPE BREAKING CHANGE** `isType` now accepts `AnyAction` of redux.
+- `action` function now accepts second argument of `PropsOpt` too.
+
+### Miscellaneous
+- Update tests for `props` function and new types.
+
 ## [1.2.0] - 2018-02-20
 
 ### Fixed

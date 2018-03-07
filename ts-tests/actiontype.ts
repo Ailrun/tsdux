@@ -1,9 +1,14 @@
 import {
-  ActionWithPayload,
+  PayloadAction,
+  PropsAction,
   action,
   payload,
+  props,
 } from '../src/action';
-import { isType, union } from '../src/actiontype';
+import {
+  isType,
+  union,
+} from '../src/actiontype';
 
 //START: Constants for tests
 interface Test {
@@ -12,7 +17,7 @@ interface Test {
 }
 
 const AddTest = action('app/tests/ADD_TEST', payload<Test>());
-const UpdateTest = action('app/tests/UPDATE_TEST', payload<{id: number, test: Test}>());
+const UpdateTest = action('app/tests/UPDATE_TEST', props<{id: number, test: Test}>());
 const RemoveTest = action('app/tests/REMOVE_TEST', payload<number>());
 const CheckTest = action('app/tests/CHECK_TEST');
 
@@ -70,14 +75,14 @@ isType(action2, [[AddTest]]);
   }
 };
 (a: ActionType): void => {
-  // Should use AddTest/RemoveTest/UpdateTest
+  // Should use AddTest/RemoveTest
   if (isType(a, CheckTest)) {
     console.log(a.payload);
   }
 };
 (a: ActionType): void => {
-  // Should use AddTest/RemoveTest/UpdateTest
-  if (isType(a, [CheckTest])) {
+  // Should use AddTest/RemoveTest
+  if (isType(a, [UpdateTest])) {
     console.log(a.payload);
   }
 };
@@ -116,8 +121,8 @@ union([AddTest, UpdateTest, []]);
 union(['', AddTest, RemoveTest]);
 
 //FAIL: Assign union of actions to specific action
-const _AddTest: ActionWithPayload<'app/tests/ADD_TEST', Test> = union([AddTest, RemoveTest]);
-const _RemoveTest: ActionWithPayload<'app/tests/REMOVE_TEST', number> = union([AddTest, RemoveTest]);
+const _AddTest: PayloadAction<'app/tests/ADD_TEST', Test> = union([AddTest, RemoveTest]);
+const _RemoveTest: PayloadAction<'app/tests/REMOVE_TEST', number> = union([AddTest, RemoveTest]);
 
 //INFO: Assigning specific action to union of actions is perfectly fine
 const __Action: ActionType = CheckTest.create();
@@ -136,14 +141,14 @@ const __Action: ActionType = CheckTest.create();
   }
 };
 (a: ActionType): void => {
-  // Should use a type of ActionWithPayload
+  // Should use a type of PayloadAction
   switch (a.type) {
   case CheckTest.type:
     console.log(a.payload);
   }
 };
 (a: ActionType): void => {
-  // Should discriminate whether `a` is ActionWithPayload or not
+  // Should discriminate whether `a` is PayloadAction or not
   console.log(a.payload);
 };
 //END: Tests

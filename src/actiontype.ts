@@ -1,10 +1,13 @@
 import {
-  Action,
+  AnyAction,
+} from 'redux';
+
+import {
   ActionCreator,
 } from './action';
 
 export function isType<AC extends ActionCreator<string, any>>(
-  action: Action<string, any>, actionCreators: AC | Array<AC>,
+  action: AnyAction, actionCreators: AC | Array<AC>,
 ): action is AC['action'] {
   if (actionCreators instanceof Array) {
     return actionCreators

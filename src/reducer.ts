@@ -1,50 +1,41 @@
-import { Reducer } from 'redux';
+import {
+  Reducer,
+} from 'redux';
 
 import {
-  ActionCreator, ActionCreatorWithPayload, ActionCreatorWithoutPayload,
+  Action,
+  ActionCreator,
 } from './action';
 
-export interface SingleActionReducerWithoutPayload<S, T extends string> {
-  type: T,
-  handler(state: S): S;
+export interface Subreducer<S, T extends string, P extends object = {}> {
+  readonly type: T,
+  handler(state: S, action: Action<T, P>): S;
 }
-export interface SingleActionReducerWithPayload<S, T extends string, P = {}> {
-  type: T,
-  handler(state: S, payload: P): S;
-}
-export type SingleActionReducer<S, T extends string, P = {}> =
-  | SingleActionReducerWithoutPayload<S, T>
-  | SingleActionReducerWithPayload<S, T, P>
-  ;
 
-export function subreducer<S, T extends string>(
-  action: ActionCreatorWithoutPayload<T>, handler: SingleActionReducerWithoutPayload<S, T>['handler'],
-): SingleActionReducerWithoutPayload<S, T>;
-export function subreducer<S, T extends string, P extends PSup, PSup>(
-  action: ActionCreatorWithPayload<T, P>, handler: SingleActionReducerWithPayload<S, T, PSup>['handler'],
-): SingleActionReducerWithPayload<S, T, P>;
-export function subreducer<T extends string, P>(action: ActionCreator<T, P>, handler: any) {
+export function subreducer<S, T extends string, P extends object>(
+  action: ActionCreator<T, P>, handler: Subreducer<S, T, P>['handler'],
+): Subreducer<S, T, P> {
   return {
     type: action.type,
     handler,
   };
 }
 
-export function reducer<S, T extends string, SR extends SingleActionReducer<S, T, any>>(
+export function reducer<S, SR extends Subreducer<S, string, any>>(
   initialState: S,
   subreducers: Array<SR>,
 ): Reducer<S> {
-  const reducerMap = subreducers.reduce((map, sr) => {
+  const reducerMap = subreducers.reduce((map, { type, handler }) => {
     return {
       ...map,
-      [sr.type]: sr.handler,
+      [type]: handler,
     };
   }, {});
 
   return function (state = initialState, action) {
     type AT = typeof action.type;
     type handler =
-      | SingleActionReducer<S, AT, any>['handler']
+      | Subreducer<S, AT, any>['handler']
       | undefined
     ;
     const handler = reducerMap[action.type] as handler;
@@ -53,14 +44,6 @@ export function reducer<S, T extends string, SR extends SingleActionReducer<S, T
       return state
     }
 
-    if (!action.payload) {
-      type handlerWithoutPayload =
-        SingleActionReducerWithoutPayload<S, AT>['handler'];
-      return (handler as handlerWithoutPayload)(state);
-    } else {
-      type handlerWithPayload =
-        SingleActionReducerWithPayload<S, AT, any>['handler'];
-      return (handler as handlerWithPayload)(state, action.payload);
-    }
+    return handler(state, action);
   };
 }
