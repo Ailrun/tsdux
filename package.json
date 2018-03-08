@@ -27,6 +27,7 @@
     "url": "git+ssh://git@github.com/Ailrun/tsdux.git"
   },
   "keywords": [
+    "tsdux",
     "redux",
     "typescript",
     "type-safe",
