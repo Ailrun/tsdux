@@ -83,6 +83,13 @@ This library is intended to be more fast, and be more lighter (therefore, have l
 
 ## API ##
 
+- [API Types](#api-types)
+    - [TypeOnlyAction](#typeonlyaction)
+    - [PropsAction](#propsaction)
+    - [PayloadAction](#payloadaction)
+    - [TypeOnlyActionCreator](#typeonlyactioncreator)
+    - [PropsActionCreator](#propsactioncreator)
+    - [PayloadActionCreator](#payloadactioncreator)
 - [Action util functions](#action-util-functions)
     - [action](#action)
     - [payload](#payload)
@@ -93,6 +100,80 @@ This library is intended to be more fast, and be more lighter (therefore, have l
 - [Reducer util functions](#reducer-util-functions)
     - [subreducer](#subreducer)
     - [reducer](#reducer)
+
+### API Types ###
+
+Types used in this library.
+
+#### TypeOnlyAction ####
+
+Action without any extra properties.
+
+``` typescript
+type TypeOnlyAction<T extends string> = {
+  type: T;
+}
+```
+
+#### PropsAction ####
+
+Action with extra properties.
+
+``` typescript
+type PropsAction<T extends string, P extends object = {}> = {
+  type: T;
+} & P;
+```
+
+#### PayloadAction ####
+
+Action with `payload` property. This action is easier to create than `PropsAction`, although this also has its own cons.
+
+``` typescript
+type PayloadAction<T extends string, P = {}> = {
+  type: T;
+  payload: P;
+}
+```
+
+#### TypeOnlyActionCreator ####
+
+ActionCreator made by [`action`](#action) function. This ActionCreator creates `TypeOnlyAction`.
+
+``` typescript
+interface TypeOnlyActionCreator<T extends string> {
+  (): TypeOnlyAction<T>;
+  type: T;
+  action: TypeOnlyAction<T>;
+  create(): TypeOnlyAction<T>;
+}
+```
+
+#### PropsActionCreator ####
+
+This ActionCreator creates `PropsAction`.
+
+``` typescript
+interface PropsActionCreator<T extends string, P extends object = {}> {
+  (props: P): PropsAction<T, P>;
+  type: T;
+  action: PropsAction<T, P>;
+  create(props: P): PropsAction<T, P>;
+}
+```
+
+#### PayloadActionCreator ####
+
+This ActionCreator creates `PayloadAction`.
+
+``` typescript
+interface PayloadActionCreator<T extends string, P = {}> {
+  (payload: P): PayloadAction<T, P>;
+  type: T;
+  action: PayloadAction<T, P>;
+  create(payload: P): PayloadAction<T, P>;
+}
+```
 
 ### Action util functions ###
 

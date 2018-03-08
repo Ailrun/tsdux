@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Values and keys of `ActionCreatorType` are changed.
 
+### Miscellaneous
+- Add type documents to README.md
+
 ## [2.0.1] - 2018-03-07
 
 ### Miscellaneous
