@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.1.0] - 2018-03-08
+
 ### Added
 - Now ActionCreator itself is callable.
 
@@ -111,6 +113,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add documentations for functions.
 
 [Unreleased]: https://github.com/Ailrun/tsdux
+[2.1.0]: https://github.com/Ailrun/tsdux/tree/v2.1.0
 [2.0.1]: https://github.com/Ailrun/tsdux/tree/v2.0.1
 [2.0.0]: https://github.com/Ailrun/tsdux/tree/v2.0.0
 [1.2.0]: https://github.com/Ailrun/tsdux/tree/v1.2.0
