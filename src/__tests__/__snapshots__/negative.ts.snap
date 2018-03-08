@@ -35,19 +35,19 @@ Array [
   "ts-tests/action.ts/75,7 :
     Type 'TypeOnlyActionCreator<\\"action/FAILED\\">' is not assignable to type 'PropsActionCreator<\\"action/FAILED\\", {}>'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITHOUT_EXTRAS' is not assignable to type 'ActionCreatorType.WITH_PROPS'.",
+        Type 'ActionCreatorType.TYPE_ONLY' is not assignable to type 'ActionCreatorType.PROPS'.",
   "ts-tests/action.ts/76,7 :
     Type 'TypeOnlyActionCreator<\\"action/W/O/PL1\\">' is not assignable to type 'PropsActionCreator<\\"action/W/O/PL1\\", {}>'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITHOUT_EXTRAS' is not assignable to type 'ActionCreatorType.WITH_PROPS'.",
+        Type 'ActionCreatorType.TYPE_ONLY' is not assignable to type 'ActionCreatorType.PROPS'.",
   "ts-tests/action.ts/79,7 :
     Type 'TypeOnlyActionCreator<\\"action/FAILED\\">' is not assignable to type 'PayloadActionCreator<\\"action/FAILED\\", {}>'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITHOUT_EXTRAS' is not assignable to type 'ActionCreatorType.WITH_PAYLOAD'.",
+        Type 'ActionCreatorType.TYPE_ONLY' is not assignable to type 'ActionCreatorType.PAYLOAD'.",
   "ts-tests/action.ts/80,7 :
     Type 'TypeOnlyActionCreator<\\"action/W/O/PL1\\">' is not assignable to type 'PayloadActionCreator<\\"action/W/O/PL1\\", {}>'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITHOUT_EXTRAS' is not assignable to type 'ActionCreatorType.WITH_PAYLOAD'.",
+        Type 'ActionCreatorType.TYPE_ONLY' is not assignable to type 'ActionCreatorType.PAYLOAD'.",
   "ts-tests/action.ts/83,8 :
     Argument of type '5' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/84,8 :
@@ -65,35 +65,35 @@ Array [
   "ts-tests/action.ts/93,7 :
     Type 'PropsActionCreator<\\"action/FAILED\\", Pick<{ x: number; }, \\"x\\">>' is not assignable to type 'TypeOnlyActionCreator<\\"action/FAILED\\">'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITH_PROPS' is not assignable to type 'ActionCreatorType.WITHOUT_EXTRAS'.",
+        Type 'ActionCreatorType.PROPS' is not assignable to type 'ActionCreatorType.TYPE_ONLY'.",
   "ts-tests/action.ts/94,7 :
     Type 'PropsActionCreator<\\"action/with?!PROPS0\\", Pick<{}, never>>' is not assignable to type 'TypeOnlyActionCreator<\\"action/WITH_PL2\\">'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITH_PROPS' is not assignable to type 'ActionCreatorType.WITHOUT_EXTRAS'.",
+        Type 'ActionCreatorType.PROPS' is not assignable to type 'ActionCreatorType.TYPE_ONLY'.",
   "ts-tests/action.ts/97,7 :
     Type 'PropsActionCreator<\\"action/FAILED\\", Pick<{ payload: string; }, \\"payload\\">>' is not assignable to type 'PayloadActionCreator<\\"action/FAILED\\", Payload<string>>'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITH_PROPS' is not assignable to type 'ActionCreatorType.WITH_PAYLOAD'.",
+        Type 'ActionCreatorType.PROPS' is not assignable to type 'ActionCreatorType.PAYLOAD'.",
   "ts-tests/action.ts/98,7 :
     Type 'PropsActionCreator<\\"action/with?!PROPS3\\", Payload<number>>' is not assignable to type 'PayloadActionCreator<\\"action/WITH_PL2\\", Payload<number>>'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITH_PROPS' is not assignable to type 'ActionCreatorType.WITH_PAYLOAD'.",
+        Type 'ActionCreatorType.PROPS' is not assignable to type 'ActionCreatorType.PAYLOAD'.",
   "ts-tests/action.ts/101,7 :
     Type 'PayloadActionCreator<\\"action/FAILED\\", number>' is not assignable to type 'TypeOnlyActionCreator<\\"action/FAILED\\">'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITH_PAYLOAD' is not assignable to type 'ActionCreatorType.WITHOUT_EXTRAS'.",
+        Type 'ActionCreatorType.PAYLOAD' is not assignable to type 'ActionCreatorType.TYPE_ONLY'.",
   "ts-tests/action.ts/102,7 :
     Type 'PayloadActionCreator<\\"action/WITH_PL2\\", string>' is not assignable to type 'TypeOnlyActionCreator<\\"action/WITH_PL2\\">'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITH_PAYLOAD' is not assignable to type 'ActionCreatorType.WITHOUT_EXTRAS'.",
+        Type 'ActionCreatorType.PAYLOAD' is not assignable to type 'ActionCreatorType.TYPE_ONLY'.",
   "ts-tests/action.ts/105,7 :
     Type 'PayloadActionCreator<\\"action/FAILED\\", number>' is not assignable to type 'PropsActionCreator<\\"action/FAILED\\", Payload<number>>'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITH_PAYLOAD' is not assignable to type 'ActionCreatorType.WITH_PROPS'.",
+        Type 'ActionCreatorType.PAYLOAD' is not assignable to type 'ActionCreatorType.PROPS'.",
   "ts-tests/action.ts/106,7 :
     Type 'PayloadActionCreator<\\"action/WITH_PL2\\", string>' is not assignable to type 'PropsActionCreator<\\"action/WITH_PL2\\", Payload<string>>'.
       Types of property '__tsdux_action__' are incompatible.
-        Type 'ActionCreatorType.WITH_PAYLOAD' is not assignable to type 'ActionCreatorType.WITH_PROPS'.",
+        Type 'ActionCreatorType.PAYLOAD' is not assignable to type 'ActionCreatorType.PROPS'.",
   "ts-tests/action.ts/109,1 :
     Expected 0 arguments, but got 1.",
   "ts-tests/action.ts/110,1 :
@@ -257,7 +257,7 @@ Array [
       Property 'length' is missing in type '{}'.",
   "ts-tests/actiontype.ts/112,7 :
     Argument of type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
-      Property 'length' is missing in type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>'.",
+      Property 'push' is missing in type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>'.",
   "ts-tests/actiontype.ts/115,1 :
     Expected 1 arguments, but got 2.",
   "ts-tests/actiontype.ts/116,1 :

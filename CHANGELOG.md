@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Now ActionCreator itself is callable.
+
+### Changed
+- Values and keys of `ActionCreatorType` are changed.
+
 ## [2.0.1] - 2018-03-07
 
 ### Miscellaneous
