@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Values and keys of `ActionCreatorType` are changed.
+- `redux` is now peerDependencies instead of dependencies.
 
 ### Miscellaneous
 - Add type documents to README.md
