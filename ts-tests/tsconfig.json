@@ -6,6 +6,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noEmit": true,
+    "skipLibCheck": true,
     "sourceMap": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
