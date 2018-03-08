@@ -11,7 +11,6 @@ module.exports = {
       "statements": 90,
     }
   },
-  mapCoverage: true,
   moduleFileExtensions: [
     'ts', 'js',
   ],

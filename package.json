@@ -45,14 +45,15 @@
   "homepage": "https://github.com/Ailrun/tsdux#readme",
   "devDependencies": {
     "@types/jest": "^22.1.2",
-    "jest": "^22.3.0",
+    "jest": "^22.4.2",
     "npm-run-all": "^4.1.2",
+    "redux": "^3.7.2",
     "rimraf": "^2.6.2",
     "ts-jest": "^22.0.4",
     "tslint": "^5.9.1",
     "typescript": "^2.7.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "redux": "^3.7.2"
   }
 }

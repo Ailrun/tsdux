@@ -1,4 +1,4 @@
-import {
+export {
   Action,
   Payload,
   PayloadAction,
@@ -11,30 +11,11 @@ import {
   payload,
   props,
 } from './action';
-import {
+export {
   isType,
   union,
 } from './actiontype';
-import {
+export {
   Subreducer,
   reducer, subreducer,
 } from './reducer';
-
-export {
-  Action,
-  Payload,
-  PayloadAction,
-  PayloadActionCreator,
-  PropsAction,
-  PropsActionCreator,
-  Subreducer,
-  TypeOnlyAction,
-  TypeOnlyActionCreator,
-  action,
-  isType,
-  payload,
-  props,
-  reducer,
-  subreducer,
-  union,
-};
