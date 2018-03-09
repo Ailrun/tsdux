@@ -26,7 +26,7 @@ npm install --save redux tsdux
 
 If you use [redux-observable](https://redux-observable.js.org/) or use [RxJS](http://reactivex.io/rxjs/) with [redux](https://redux.js.org/introduction), you also might have interest in [tsdux-observable](https://github.com/Ailrun/tsdux-observable) which includes some basic utilities to use TSdux with `Observable`s.
 
-``` typescript
+```
 npm install --save rxjs tsdux-observable
 ```
 
