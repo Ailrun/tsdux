@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+- Add supports for `redux@^4`
+
 ## [2.2.0] - 2018-05-06
 
 ## [2.1.0] - 2018-03-08
