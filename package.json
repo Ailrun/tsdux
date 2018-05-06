@@ -1,6 +1,6 @@
 {
   "name": "tsdux",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Type-safe Redux utilities for TypeScript",
   "private": true,
   "scripts": {
