@@ -56,7 +56,7 @@ Array [
     Argument of type 'never[]' is not assignable to parameter of type 'string'.",
   "ts-tests/action.ts/88,15 :
     Argument of type '{}' is not assignable to parameter of type 'PayloadOpt<{}>'.
-      Property '__tsdux_opt__' is missing in type '{}'.",
+      Type '{}' is missing the following properties from type 'PayloadOpt<{}>': __tsdux_opt__, payload",
   "ts-tests/action.ts/89,17 :
     Argument of type '{ x: number; }' is not assignable to parameter of type 'PayloadOpt<{}>'.
       Object literal may only specify known properties, and 'x' does not exist in type 'PayloadOpt<{}>'.",
@@ -108,20 +108,16 @@ Array [
         Type '\\"action/W/O/PL0\\"' is not assignable to type '\\"GEWFEWK\\"'.",
   "ts-tests/action.ts/117,7 :
     Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Action<\\"action/W/O/PL1\\", Payload<{ v: string; }>>'.
-      Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Payload<{ v: string; }>'.
-        Property 'payload' is missing in type '{ readonly type: \\"action/W/O/PL1\\"; }'.",
+      Property 'payload' is missing in type '{ readonly type: \\"action/W/O/PL1\\"; }' but required in type 'Payload<{ v: string; }>'.",
   "ts-tests/action.ts/118,7 :
     Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Action<\\"action/W/O/PL1\\", Payload<{ world: \\"peace\\"; }>>'.
-      Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Payload<{ world: \\"peace\\"; }>'.
-        Property 'payload' is missing in type '{ readonly type: \\"action/W/O/PL1\\"; }'.",
+      Property 'payload' is missing in type '{ readonly type: \\"action/W/O/PL1\\"; }' but required in type 'Payload<{ world: \\"peace\\"; }>'.",
   "ts-tests/action.ts/121,7 :
     Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Action<\\"action/W/O/PL1\\", Payload<{}>>'.
-      Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Payload<{}>'.
-        Property 'payload' is missing in type '{ readonly type: \\"action/W/O/PL1\\"; }'.",
+      Property 'payload' is missing in type '{ readonly type: \\"action/W/O/PL1\\"; }' but required in type 'Payload<{}>'.",
   "ts-tests/action.ts/122,7 :
     Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Action<\\"action/W/O/PL1\\", Payload<{}>>'.
-      Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Payload<{}>'.
-        Property 'payload' is missing in type '{ readonly type: \\"action/W/O/PL1\\"; }'.",
+      Type '{ readonly type: \\"action/W/O/PL1\\"; }' is not assignable to type 'Payload<{}>'.",
   "ts-tests/action.ts/129,1 :
     Expected 1 arguments, but got 0.",
   "ts-tests/action.ts/130,1 :
@@ -134,7 +130,7 @@ Array [
     Argument of type 'true' is not assignable to parameter of type 'Payload<number>'.",
   "ts-tests/action.ts/136,21 :
     Argument of type 'number[]' is not assignable to parameter of type 'Payload<number>'.
-      Property 'payload' is missing in type 'number[]'.",
+      Property 'payload' is missing in type 'number[]' but required in type 'Payload<number>'.",
   "ts-tests/action.ts/137,23 :
     Argument of type '{ y: number; }' is not assignable to parameter of type 'Payload<number>'.
       Object literal may only specify known properties, and 'y' does not exist in type 'Payload<number>'.",
@@ -184,12 +180,11 @@ Array [
     Type 'Action<\\"action/WITH_PL0\\", Payload<{}>>' is not assignable to type 'Action<\\"action/WITH_PL0\\", Payload<{ value: number; }>>'.
       Type 'Action<\\"action/WITH_PL0\\", Payload<{}>>' is not assignable to type 'Payload<{ value: number; }>'.
         Types of property 'payload' are incompatible.
-          Type '{}' is not assignable to type '{ value: number; }'.
-            Property 'value' is missing in type '{}'.",
+          Property 'value' is missing in type '{}' but required in type '{ value: number; }'.",
   "ts-tests/action.ts/185,16 :
-    Cannot assign to 'payload' because it is a constant or a read-only property.",
+    Cannot assign to 'payload' because it is a read-only property.",
   "ts-tests/action.ts/186,16 :
-    Cannot assign to 'payload' because it is a constant or a read-only property.",
+    Cannot assign to 'payload' because it is a read-only property.",
 ]
 `;
 
@@ -205,22 +200,20 @@ Array [
     Argument of type '5' is not assignable to parameter of type 'AnyAction'.",
   "ts-tests/actiontype.ts/58,8 :
     Argument of type 'never[]' is not assignable to parameter of type 'AnyAction'.
-      Property 'type' is missing in type 'never[]'.",
+      Property 'type' is missing in type 'never[]' but required in type 'AnyAction'.",
   "ts-tests/actiontype.ts/59,8 :
     Argument of type '{ test: string; }' is not assignable to parameter of type 'AnyAction'.
-      Property 'type' is missing in type '{ test: string; }'.",
+      Property 'type' is missing in type '{ test: string; }' but required in type 'AnyAction'.",
   "ts-tests/actiontype.ts/62,17 :
     Argument of type '5' is not assignable to parameter of type 'ActionCreator<string, any> | ActionCreator<string, any>[]'.",
   "ts-tests/actiontype.ts/63,17 :
     Argument of type 'true' is not assignable to parameter of type 'ActionCreator<string, any> | ActionCreator<string, any>[]'.",
   "ts-tests/actiontype.ts/64,17 :
     Argument of type '{}' is not assignable to parameter of type 'ActionCreator<string, any> | ActionCreator<string, any>[]'.
-      Type '{}' is not assignable to type 'ActionCreator<string, any>[]'.
-        Property 'length' is missing in type '{}'.",
+      Type '{}' is missing the following properties from type 'ActionCreator<string, any>': __tsdux_action__, type, action, create",
   "ts-tests/actiontype.ts/65,17 :
     Argument of type 'Action<\\"app/tests/UPDATE_TEST\\", Pick<{ id: number; test: Test; }, \\"id\\" | \\"test\\">>' is not assignable to parameter of type 'ActionCreator<string, any> | ActionCreator<string, any>[]'.
-      Type 'Action<\\"app/tests/UPDATE_TEST\\", Pick<{ id: number; test: Test; }, \\"id\\" | \\"test\\">>' is not assignable to type 'ActionCreator<string, any>[]'.
-        Property 'length' is missing in type 'Action<\\"app/tests/UPDATE_TEST\\", Pick<{ id: number; test: Test; }, \\"id\\" | \\"test\\">>'.",
+      Type 'Action<\\"app/tests/UPDATE_TEST\\", Pick<{ id: number; test: Test; }, \\"id\\" | \\"test\\">>' is missing the following properties from type 'ActionCreator<string, any>': __tsdux_action__, action, create",
   "ts-tests/actiontype.ts/66,17 :
     Argument of type 'number[]' is not assignable to parameter of type 'ActionCreator<string, any> | ActionCreator<string, any>[]'.
       Type 'number[]' is not assignable to type 'ActionCreator<string, any>[]'.
@@ -228,13 +221,11 @@ Array [
   "ts-tests/actiontype.ts/67,17 :
     Argument of type 'Action<\\"app/tests/REMOVE_TEST\\", Payload<number>>[]' is not assignable to parameter of type 'ActionCreator<string, any> | ActionCreator<string, any>[]'.
       Type 'Action<\\"app/tests/REMOVE_TEST\\", Payload<number>>[]' is not assignable to type 'ActionCreator<string, any>[]'.
-        Type 'Action<\\"app/tests/REMOVE_TEST\\", Payload<number>>' is not assignable to type 'ActionCreator<string, any>'.
-          Property '__tsdux_action__' is missing in type '{ readonly type: \\"app/tests/REMOVE_TEST\\"; } & Payload<number>'.",
+        Type '{ readonly type: \\"app/tests/REMOVE_TEST\\"; } & Payload<number>' is missing the following properties from type 'ActionCreator<string, any>': __tsdux_action__, action, create",
   "ts-tests/actiontype.ts/68,17 :
     Argument of type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>[][]' is not assignable to parameter of type 'ActionCreator<string, any> | ActionCreator<string, any>[]'.
       Type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>[][]' is not assignable to type 'ActionCreator<string, any>[]'.
-        Type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>[]' is not assignable to type 'ActionCreator<string, any>'.
-          Property '__tsdux_action__' is missing in type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>[]'.",
+        Type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>[]' is missing the following properties from type 'ActionCreator<string, any>': __tsdux_action__, type, action, create",
   "ts-tests/actiontype.ts/74,17 :
     Operator '+' cannot be applied to types 'Test' and '2'.",
   "ts-tests/actiontype.ts/80,19 :
@@ -254,25 +245,20 @@ Array [
     Argument of type '\\"fweweglu\\"' is not assignable to parameter of type 'ActionCreator<string, any>[]'.",
   "ts-tests/actiontype.ts/111,7 :
     Argument of type '{}' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
-      Property 'length' is missing in type '{}'.",
+      Type '{}' is missing the following properties from type 'ActionCreator<string, any>[]': length, pop, push, concat, and 16 more.",
   "ts-tests/actiontype.ts/112,7 :
     Argument of type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
-      Property 'push' is missing in type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>'.",
+      Type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test>' is missing the following properties from type 'ActionCreator<string, any>[]': pop, push, concat, join, and 15 more.",
   "ts-tests/actiontype.ts/115,1 :
     Expected 1 arguments, but got 2.",
   "ts-tests/actiontype.ts/116,1 :
     Expected 1 arguments, but got 2.",
   "ts-tests/actiontype.ts/117,1 :
     Expected 1 arguments, but got 2.",
-  "ts-tests/actiontype.ts/120,7 :
-    Argument of type '(PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test> | PropsActionCreator<\\"app/tests/UPDATE_TEST\\", P...' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
-      Type 'PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test> | PropsActionCreator<\\"app/tests/UPDATE_TEST\\", Pi...' is not assignable to type 'ActionCreator<string, any>'.
-        Type 'never[]' is not assignable to type 'ActionCreator<string, any>'.
-          Property '__tsdux_action__' is missing in type 'never[]'.",
-  "ts-tests/actiontype.ts/121,7 :
-    Argument of type '(string | PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test> | PayloadActionCreator<\\"app/tests/REMO...' is not assignable to parameter of type 'ActionCreator<string, any>[]'.
-      Type 'string | PayloadActionCreator<\\"app/tests/ADD_TEST\\", Test> | PayloadActionCreator<\\"app/tests/REMOV...' is not assignable to type 'ActionCreator<string, any>'.
-        Type 'string' is not assignable to type 'ActionCreator<string, any>'.",
+  "ts-tests/actiontype.ts/120,29 :
+    Type 'never[]' is missing the following properties from type 'ActionCreator<string, any>': __tsdux_action__, type, action, create",
+  "ts-tests/actiontype.ts/121,8 :
+    Type 'string' is not assignable to type 'ActionCreator<string, any>'.",
   "ts-tests/actiontype.ts/124,7 :
     Type 'Action<\\"app/tests/ADD_TEST\\", Payload<Test>> | Action<\\"app/tests/REMOVE_TEST\\", Payload<number>>' is not assignable to type 'Action<\\"app/tests/ADD_TEST\\", Payload<Test>>'.
       Type 'Action<\\"app/tests/REMOVE_TEST\\", Payload<number>>' is not assignable to type 'Action<\\"app/tests/ADD_TEST\\", Payload<Test>>'.
@@ -292,7 +278,7 @@ Array [
   "ts-tests/actiontype.ts/147,19 :
     Property 'payload' does not exist on type '{ readonly type: \\"app/tests/CHECK_TEST\\"; }'.",
   "ts-tests/actiontype.ts/152,17 :
-    Property 'payload' does not exist on type 'Action<\\"app/tests/ADD_TEST\\", Payload<Test>> | Action<\\"app/tests/UPDATE_TEST\\", Pick<{ id: number; ...'.
+    Property 'payload' does not exist on type 'Action<\\"app/tests/ADD_TEST\\", Payload<Test>> | Action<\\"app/tests/UPDATE_TEST\\", Pick<{ id: number; test: Test; }, \\"id\\" | \\"test\\">> | Action<\\"app/tests/REMOVE_TEST\\", Payload<number>> | { ...; }'.
       Property 'payload' does not exist on type 'Action<\\"app/tests/UPDATE_TEST\\", Pick<{ id: number; test: Test; }, \\"id\\" | \\"test\\">>'.",
 ]
 `;
@@ -309,18 +295,18 @@ Array [
     Argument of type '5' is not assignable to parameter of type 'ActionCreator<string, {}>'.",
   "ts-tests/reducer.ts/116,12 :
     Argument of type '{}' is not assignable to parameter of type 'ActionCreator<string, {}>'.
-      Property '__tsdux_action__' is missing in type '{}'.",
+      Type '{}' is missing the following properties from type 'ActionCreator<string, {}>': __tsdux_action__, type, action, create",
   "ts-tests/reducer.ts/117,12 :
     Argument of type 'never[]' is not assignable to parameter of type 'ActionCreator<string, {}>'.
-      Property '__tsdux_action__' is missing in type 'never[]'.",
+      Type 'never[]' is missing the following properties from type 'ActionCreator<string, {}>': __tsdux_action__, type, action, create",
   "ts-tests/reducer.ts/118,12 :
     Argument of type 'Action<\\"app/history/ADD_HISTORY\\", Payload<History>>' is not assignable to parameter of type 'ActionCreator<string, {}>'.
-      Property '__tsdux_action__' is missing in type '{ readonly type: \\"app/history/ADD_HISTORY\\"; } & Payload<History>'.",
+      Type '{ readonly type: \\"app/history/ADD_HISTORY\\"; } & Payload<History>' is missing the following properties from type 'ActionCreator<string, {}>': __tsdux_action__, action, create",
   "ts-tests/reducer.ts/119,12 :
     Argument of type 'Action<\\"app/history/ADD_HISTORY\\", Payload<History>>[]' is not assignable to parameter of type 'ActionCreator<string, {}>'.
-      Property '__tsdux_action__' is missing in type 'Action<\\"app/history/ADD_HISTORY\\", Payload<History>>[]'.",
+      Type 'Action<\\"app/history/ADD_HISTORY\\", Payload<History>>[]' is missing the following properties from type 'ActionCreator<string, {}>': __tsdux_action__, type, action, create",
   "ts-tests/reducer.ts/122,27 :
-    Argument of type '5' is not assignable to parameter of type '(state: {}, action: Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, ...'.",
+    Argument of type '5' is not assignable to parameter of type '(state: {}, action: Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>) => {}'.",
   "ts-tests/reducer.ts/123,27 :
     Argument of type 'never[]' is not assignable to parameter of type '(state: {}, action: Action<\\"app/history/REMOVE_HISTORY\\", Payload<number>>) => {}'.
       Type 'never[]' provides no match for the signature '(state: {}, action: Action<\\"app/history/REMOVE_HISTORY\\", Payload<number>>): {}'.",
@@ -328,24 +314,21 @@ Array [
     Argument of type '{}' is not assignable to parameter of type '(state: {}, action: { readonly type: \\"app/history/RESET_HISTORY\\"; }) => {}'.
       Type '{}' provides no match for the signature '(state: {}, action: { readonly type: \\"app/history/RESET_HISTORY\\"; }): {}'.",
   "ts-tests/reducer.ts/125,24 :
-    Argument of type '(s: {}) => void' is not assignable to parameter of type '(state: void, action: Action<\\"app/history/ADD_HISTORY\\", Payload<History>>) => void'.
-      Types of parameters 's' and 'state' are incompatible.
-        Type 'void' is not assignable to type '{}'.",
+    Argument of type '(s: {}) => void' is not assignable to parameter of type '(state: {}, action: Action<\\"app/history/ADD_HISTORY\\", Payload<History>>) => {}'.
+      Type 'void' is not assignable to type '{}'.",
   "ts-tests/reducer.ts/126,24 :
-    Argument of type '(s: State, v: Action<\\"app/history/ADD_HISTORY\\", Payload<History>>) => Action<\\"app/history/ADD_HIS...' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/ADD_HISTORY\\", Payload<History>>) => State'.
-      Type 'Action<\\"app/history/ADD_HISTORY\\", Payload<History>>' is not assignable to type 'State'.
-        Property 'histories' is missing in type '{ readonly type: \\"app/history/ADD_HISTORY\\"; } & Payload<History>'.",
+    Argument of type '(s: State, v: Action<\\"app/history/ADD_HISTORY\\", Payload<History>>) => Action<\\"app/history/ADD_HISTORY\\", Payload<History>>' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/ADD_HISTORY\\", Payload<History>>) => State'.
+      Property 'histories' is missing in type '{ readonly type: \\"app/history/ADD_HISTORY\\"; } & Payload<History>' but required in type 'State'.",
   "ts-tests/reducer.ts/127,24 :
     Argument of type '(s: State, v: History, x: any) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/ADD_HISTORY\\", Payload<History>>) => State'.",
   "ts-tests/reducer.ts/130,27 :
-    Argument of type '(s: State, v: History) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; ...'.
+    Argument of type '(s: State, v: History) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>) => State'.
       Types of parameters 'v' and 'action' are incompatible.
-        Type 'Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>' is not assignable to type 'History'.
-          Property 'content' is missing in type 'Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>'.",
+        Type 'Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>' is missing the following properties from type 'History': content, userId, created",
   "ts-tests/reducer.ts/131,26 :
-    Argument of type '(s: State, v: undefined) => State' is not assignable to parameter of type '(state: State, action: { readonly type: \\"app/history/RESET_HISTORY\\"; }) => State'.
+    Argument of type '(s: State, v: undefined) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/RESET_HISTORY\\", object>) => State'.
       Types of parameters 'v' and 'action' are incompatible.
-        Type '{ readonly type: \\"app/history/RESET_HISTORY\\"; }' is not assignable to type 'undefined'.",
+        Type 'Action<\\"app/history/RESET_HISTORY\\", object>' is not assignable to type 'undefined'.",
   "ts-tests/reducer.ts/132,26 :
     Argument of type '(s: State, v: number) => State' is not assignable to parameter of type '(state: State, action: { readonly type: \\"app/history/RESET_HISTORY\\"; }) => State'.
       Types of parameters 'v' and 'action' are incompatible.
@@ -353,23 +336,20 @@ Array [
   "ts-tests/reducer.ts/133,24 :
     Argument of type '(s: State, v: { id: number; }) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/ADD_HISTORY\\", Payload<History>>) => State'.
       Types of parameters 'v' and 'action' are incompatible.
-        Type 'Action<\\"app/history/ADD_HISTORY\\", Payload<History>>' is not assignable to type '{ id: number; }'.
-          Property 'id' is missing in type '{ readonly type: \\"app/history/ADD_HISTORY\\"; } & Payload<History>'.",
+        Property 'id' is missing in type '{ readonly type: \\"app/history/ADD_HISTORY\\"; } & Payload<History>' but required in type '{ id: number; }'.",
   "ts-tests/reducer.ts/136,27 :
-    Argument of type '(s: State, v: { id: string; }) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; ...'.
+    Argument of type '(s: State, v: { id: string; }) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>) => State'.
       Types of parameters 'v' and 'action' are incompatible.
         Type 'Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>' is not assignable to type '{ id: string; }'.
           Types of property 'id' are incompatible.
             Type 'number' is not assignable to type 'string'.",
   "ts-tests/reducer.ts/137,27 :
-    Argument of type '(s: State, v: { id: number; updated: History; world: boolean; }) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; ...'.
+    Argument of type '(s: State, v: { id: number; updated: History; world: boolean; }) => State' is not assignable to parameter of type '(state: State, action: Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>) => State'.
       Types of parameters 'v' and 'action' are incompatible.
-        Type 'Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>' is not assignable to type '{ id: number; updated: History; world: boolean; }'.
-          Property 'world' is missing in type 'Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>'.",
+        Property 'world' is missing in type 'Action<\\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>' but required in type '{ id: number; updated: History; world: boolean; }'.",
   "ts-tests/reducer.ts/143,7 :
-    Type 'Subreducer<any, \\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"upd...' is not assignable to type 'Subreducer<any, \\"app/history/UPDATE_HISTORY\\", { x: number; }>'.
-      Type 'Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">' is not assignable to type '{ x: number; }'.
-        Property 'x' is missing in type 'Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">'.",
+    Type 'Subreducer<any, \\"app/history/UPDATE_HISTORY\\", Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">>' is not assignable to type 'Subreducer<any, \\"app/history/UPDATE_HISTORY\\", { x: number; }>'.
+      Property 'x' is missing in type 'Pick<{ id: number; updated: History; }, \\"id\\" | \\"updated\\">' but required in type '{ x: number; }'.",
   "ts-tests/reducer.ts/144,7 :
     Type 'Subreducer<any, \\"a\\", Pick<{ result: boolean; }, \\"result\\">>' is not assignable to type 'Subreducer<any, \\"a\\", { result: number; }>'.
       Type 'Pick<{ result: boolean; }, \\"result\\">' is not assignable to type '{ result: number; }'.
@@ -391,35 +371,26 @@ Array [
     Argument of type '5' is not assignable to parameter of type 'Subreducer<State, string, any>[]'.",
   "ts-tests/reducer.ts/155,23 :
     Argument of type '{}' is not assignable to parameter of type 'Subreducer<State, string, any>[]'.
-      Property 'length' is missing in type '{}'.",
+      Type '{}' is missing the following properties from type 'Subreducer<State, string, any>[]': length, pop, push, concat, and 16 more.",
   "ts-tests/reducer.ts/156,23 :
     Argument of type 'true' is not assignable to parameter of type 'Subreducer<State, string, any>[]'.",
   "ts-tests/reducer.ts/157,23 :
     Argument of type '\\"asdaw\\"' is not assignable to parameter of type 'Subreducer<State, string, any>[]'.",
-  "ts-tests/reducer.ts/158,23 :
-    Argument of type 'number[]' is not assignable to parameter of type 'Subreducer<State, string, any>[]'.
-      Type 'number' is not assignable to type 'Subreducer<State, string, any>'.",
-  "ts-tests/reducer.ts/159,23 :
-    Argument of type '(<S, T extends string, P extends object>(action: ActionCreator<T, P>, handler: (state: S, action:...' is not assignable to parameter of type 'Subreducer<State, string, any>[]'.
-      Type '<S, T extends string, P extends object>(action: ActionCreator<T, P>, handler: (state: S, action: ...' is not assignable to type 'Subreducer<State, string, any>'.
-        Property 'type' is missing in type '<S, T extends string, P extends object>(action: ActionCreator<T, P>, handler: (state: S, action: ...'.",
-  "ts-tests/reducer.ts/160,23 :
-    Argument of type 'PayloadActionCreator<\\"app/history/ADD_HISTORY\\", History>[]' is not assignable to parameter of type 'Subreducer<State, string, any>[]'.
-      Type 'PayloadActionCreator<\\"app/history/ADD_HISTORY\\", History>' is not assignable to type 'Subreducer<State, string, any>'.
-        Property 'handler' is missing in type 'PayloadActionCreator<\\"app/history/ADD_HISTORY\\", History>'.",
-  "ts-tests/reducer.ts/163,23 :
-    Argument of type 'Subreducer<{ x: number; y: number; }, \\"app/history/ADD_HISTORY\\", Payload<History>>[]' is not assignable to parameter of type 'Subreducer<State, string, any>[]'.
-      Type 'Subreducer<{ x: number; y: number; }, \\"app/history/ADD_HISTORY\\", Payload<History>>' is not assignable to type 'Subreducer<State, string, any>'.
-        Type '{ x: number; y: number; }' is not assignable to type 'State'.
-          Property 'histories' is missing in type '{ x: number; y: number; }'.",
+  "ts-tests/reducer.ts/158,24 :
+    Type 'number' is not assignable to type 'Subreducer<State, string, any>'.",
+  "ts-tests/reducer.ts/159,24 :
+    Type '<S, T extends string, P extends object>(action: ActionCreator<T, P>, handler: (state: S, action: Action<T, P>) => S) => Subreducer<S, T, P>' is missing the following properties from type 'Subreducer<State, string, any>': type, handler",
+  "ts-tests/reducer.ts/160,24 :
+    Property 'handler' is missing in type 'PayloadActionCreator<\\"app/history/ADD_HISTORY\\", History>' but required in type 'Subreducer<State, string, any>'.",
+  "ts-tests/reducer.ts/163,24 :
+    Type 'Subreducer<{ x: number; y: number; }, \\"app/history/ADD_HISTORY\\", Payload<History>>' is not assignable to type 'Subreducer<State, string, any>'.
+      Property 'histories' is missing in type '{ x: number; y: number; }' but required in type 'State'.",
   "ts-tests/reducer.ts/164,14 :
     'number' only refers to a type, but is being used as a value here.",
   "ts-tests/reducer.ts/164,25 :
     'number' only refers to a type, but is being used as a value here.",
-  "ts-tests/reducer.ts/164,35 :
-    Argument of type 'Subreducer<{ histories: { id: number; history: History; }[]; }, \\"app/history/ADD_HISTORY\\", Payloa...' is not assignable to parameter of type 'Subreducer<{ x: any; y: any; }, string, any>[]'.
-      Type 'Subreducer<{ histories: { id: number; history: History; }[]; }, \\"app/history/ADD_HISTORY\\", Payloa...' is not assignable to type 'Subreducer<{ x: any; y: any; }, string, any>'.
-        Type '{ histories: { id: number; history: History; }[]; }' is not assignable to type '{ x: any; y: any; }'.
-          Property 'x' is missing in type '{ histories: { id: number; history: History; }[]; }'.",
+  "ts-tests/reducer.ts/164,36 :
+    Type 'Subreducer<{ histories: { id: number; history: History; }[]; }, \\"app/history/ADD_HISTORY\\", Payload<History>>' is not assignable to type 'Subreducer<{ x: any; y: any; }, string, any>'.
+      Type '{ histories: { id: number; history: History; }[]; }' is missing the following properties from type '{ x: any; y: any; }': x, y",
 ]
 `;
