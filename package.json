@@ -44,14 +44,14 @@
   },
   "homepage": "https://github.com/Ailrun/tsdux#readme",
   "devDependencies": {
-    "@types/jest": "^22.1.2",
-    "jest": "^22.4.2",
-    "npm-run-all": "^4.1.2",
-    "redux": "^4.0.0",
+    "@types/jest": "^23.3.10",
+    "jest": "^23.6.0",
+    "npm-run-all": "^4.1.5",
+    "redux": "^4.0.1",
     "rimraf": "^2.6.2",
-    "ts-jest": "^22.0.4",
-    "tslint": "^5.9.1",
-    "typescript": "^2.7.1"
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
   },
   "peerDependencies": {
     "redux": "^3.7.2 || ^4"
