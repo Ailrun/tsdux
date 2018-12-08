@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Changed
+- Now tsdux supports `ts@>=2.9` better.
+
 ## Miscellaneous
 - Update dev dependencies
 
