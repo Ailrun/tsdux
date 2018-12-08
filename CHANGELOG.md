@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.0.0] - 2018-12-08
+
 ### Changed
 - Now tsdux supports `ts@>=2.9` better.
 
@@ -126,6 +128,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add documentations for functions.
 
 [Unreleased]: https://github.com/Ailrun/tsdux
+[4.0.0]: https://github.com/Ailrun/tsdux/tree/v4.0.0
 [2.2.1]: https://github.com/Ailrun/tsdux/tree/v2.2.1
 [2.2.0]: https://github.com/Ailrun/tsdux/tree/v2.2.0
 [2.1.0]: https://github.com/Ailrun/tsdux/tree/v2.1.0
