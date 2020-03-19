@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": [
+      "ES2015"
+    ],
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -13,6 +17,6 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5"
+    "target": "es2015"
   }
 }

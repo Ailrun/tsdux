@@ -2,7 +2,6 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "./dist",
     "module": "commonjs",
     "outDir": "./dist",
     "target": "es5"
@@ -11,6 +10,7 @@
     "node_modules",
     "ts-tests",
     "**/__tests__/**",
-    "**/test-utilities.ts"
+    "**/test-utilities.ts",
+    "dist"
   ]
 }

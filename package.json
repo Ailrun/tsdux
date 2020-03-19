@@ -5,17 +5,15 @@
   "private": true,
   "scripts": {
     "packaging": "npm-run-all clean-dist make-dist build copy-package",
-    "build": "npm-run-all -p build-cjs build-es5 build-es2015",
+    "build": "npm-run-all -p build-cjs build-es2015",
     "clean-dist": "rimraf ./dist",
     "make-dist": "mkdir ./dist",
     "build-cjs": "npm-run-all compile-cjs",
-    "build-es5": "npm-run-all compile-es5",
     "build-es2015": "npm-run-all compile-es2015",
     "compile-cjs": "tsc --project ./tsconfig.cjs.json",
-    "compile-es5": "tsc --project ./tsconfig.es5.json",
     "compile-es2015": "tsc --project ./tsconfig.es2015.json",
     "copy-package": "node ./scripts/copy-package.js",
-    "lint": "tslint --format codeFrame --project .",
+    "lint": "eslint src --ext ts --ext tsx",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "version": "npm-run-all --silent update-changelog stage-changelog",
@@ -44,16 +42,21 @@
   },
   "homepage": "https://github.com/Ailrun/tsdux#readme",
   "devDependencies": {
-    "@types/jest": "^23.3.10",
-    "jest": "^23.6.0",
+    "@types/jest": "^25.1.4",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
     "npm-run-all": "^4.1.5",
-    "redux": "^4.0.1",
-    "rimraf": "^2.6.2",
-    "ts-jest": "^23.10.5",
-    "tslint": "^5.11.0",
-    "typescript": "^3.2.2"
+    "redux": "^4.0.5",
+    "rimraf": "^2.7.1",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "redux": "^3.7.2 || ^4"
+  },
+  "dependencies": {
+    "tslint": "^6.1.0"
   }
 }

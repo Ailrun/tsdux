@@ -2,7 +2,7 @@
   "private": false,
   "main": "./index.js",
   "es2015": "./es2015/index.js",
-  "module": "./es5/index.js",
+  "module": "./es2015/index.js",
   "types": "./index.d.ts",
   "scripts": {},
   "devDependencies": {}

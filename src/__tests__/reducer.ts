@@ -1,3 +1,4 @@
+/// <reference lib="DOM" />
 //tslint:disable: no-magic-numbers
 import { action, payload, props } from '../action';
 import { reducer, subreducer } from '../reducer';
